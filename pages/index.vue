@@ -16,7 +16,7 @@
     <v-main>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center" no-gutters>
-          <v-col>
+          <v-col class="pa-0 ma-0">
             <v-img
               :max-height="[$vuetify.breakpoint.lgAndUp ? 225 : 150]"
               contain
