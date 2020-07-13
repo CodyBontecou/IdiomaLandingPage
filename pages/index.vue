@@ -23,22 +23,24 @@
               src="logo.png"
             ></v-img>
           </v-col>
-          <v-col class="text-center">
+          <v-col
+            :class="[
+              $vuetify.breakpoint.mdAndDown ? 'text-center' : 'text-left',
+            ]"
+          >
             <div
               class="flex-column mb-6"
-              :class="[
-                $vuetify.breakpoint.lgAndUp ? 'text-left' : 'text-center',
-              ]"
+              :class="[$vuetify.breakpoint.mdAndDown ? 'title' : 'text-h3']"
             >
               <h1
                 class="font-weight-thin"
-                :class="[$vuetify.breakpoint.lgAndUp ? 'text-h3' : 'title']"
+                :class="[$vuetify.breakpoint.mdAndDown ? 'title' : 'text-h3']"
               >
                 The Progressive
               </h1>
               <h1
                 class="font-weight-thin ml-2"
-                :class="[$vuetify.breakpoint.lgAndUp ? 'text-h4' : 'title']"
+                :class="[$vuetify.breakpoint.mdAndDown ? 'title' : 'text-h4']"
               >
                 Language Learning Program
               </h1>
@@ -51,7 +53,7 @@
                 <div
                   class="flex-row"
                   :class="[
-                    $vuetify.breakpoint.lgAndUp ? 'text-left' : 'text-center',
+                    $vuetify.breakpoint.mdAndDown ? 'text-center' : 'text-left',
                   ]"
                 >
                   <v-btn
