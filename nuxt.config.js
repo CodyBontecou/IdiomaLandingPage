@@ -24,7 +24,7 @@ export default {
         content: 'Spanish Learning',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: 'icon.png' }],
   },
   /*
    ** Global CSS

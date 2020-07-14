@@ -2,16 +2,16 @@
   <v-app id="inspire">
     <v-app-bar app color="transparent" flat>
       <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.smAndDown"
+        v-show="$vuetify.breakpoint.smAndDown"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <v-toolbar-title v-if="$vuetify.breakpoint.mdAndUp">
+      <v-toolbar-title v-show="$vuetify.breakpoint.mdAndUp">
         Idioma
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
         v-for="item in navOptions"
-        v-if="$vuetify.breakpoint.lgAndUp"
+        v-show="$vuetify.breakpoint.lgAndUp"
         :key="item.id"
         text
         class="text-capitalize underlined_button"
@@ -21,7 +21,7 @@
     </v-app-bar>
 
     <v-navigation-drawer
-      v-if="$vuetify.breakpoint.mdAndDown"
+      v-show="$vuetify.breakpoint.mdAndDown"
       v-model="drawer"
       app
     >
@@ -55,7 +55,7 @@
     <v-main>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center" no-gutters>
-          <v-col class="pa-0 ma-0">
+          <v-col class="pa-0 ma-0" xs="12" sm="6">
             <v-img
               :max-height="$vuetify.breakpoint.lgAndUp ? 225 : 150"
               :class="$vuetify.breakpoint.mdAndDown ? '' : 'pb-5'"
@@ -64,6 +64,8 @@
             ></v-img>
           </v-col>
           <v-col
+            xs="12"
+            sm="6"
             :class="
               $vuetify.breakpoint.mdAndDown
                 ? 'text-center'
@@ -139,9 +141,9 @@
           >
             <v-card class="mx-auto" max-width="255" flat>
               <v-card-text class="font-weight-thin">
-                <p class="text-h6 primary--text font-weight-medium">
+                <div class="text-h6 primary--text font-weight-medium">
                   {{ info.title }}
-                </p>
+                </div>
                 <div class="text--primary">{{ info.description }}</div>
               </v-card-text>
             </v-card>
