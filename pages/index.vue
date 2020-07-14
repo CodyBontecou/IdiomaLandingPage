@@ -1,53 +1,92 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app color="transparent" flat>
-      <v-toolbar-title>Idioma</v-toolbar-title>
+      <v-app-bar-nav-icon
+        v-if="$vuetify.breakpoint.smAndDown"
+        @click="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+      <v-toolbar-title v-if="$vuetify.breakpoint.mdAndUp">
+        Idioma
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
-        v-for="nav in navOptions"
-        :key="nav.id"
+        v-for="item in navOptions"
+        v-if="$vuetify.breakpoint.lgAndUp"
+        :key="item.id"
         text
         class="text-capitalize underlined_button"
       >
-        <span class="text--black">{{ nav.text }}</span>
+        <span class="text--black">{{ item.text }}</span>
       </v-btn>
     </v-app-bar>
+
+    <v-navigation-drawer
+      v-if="$vuetify.breakpoint.mdAndDown"
+      v-model="drawer"
+      app
+    >
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title>
+            <v-img max-height="100" contain src="logo.png"></v-img>
+          </v-list-item-title>
+          <v-list-item-subtitle class="title text-center pt-3">
+            Idioma
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list dense nav>
+        <v-list-item v-for="item in navOptions" :key="item.id" link>
+          <v-list-item-icon>
+            <v-icon color="primary">{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title class="text-capitalize">
+              {{ item.text }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
 
     <v-main>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center" no-gutters>
           <v-col class="pa-0 ma-0">
             <v-img
-              :max-height="[$vuetify.breakpoint.lgAndUp ? 225 : 150]"
+              :max-height="$vuetify.breakpoint.lgAndUp ? 225 : 150"
+              :class="$vuetify.breakpoint.mdAndDown ? '' : 'pb-5'"
               contain
               src="logo.png"
             ></v-img>
           </v-col>
           <v-col
-            :class="[
-              $vuetify.breakpoint.mdAndDown ? 'text-center' : 'text-left',
-            ]"
+            :class="
+              $vuetify.breakpoint.mdAndDown
+                ? 'text-center'
+                : 'text-left pa-5 ma-5'
+            "
           >
-            <div
-              class="flex-column mb-6"
-              :class="[$vuetify.breakpoint.mdAndDown ? 'title' : 'text-h3']"
-            >
+            <div class="flex-column mb-6">
               <h1
                 class="font-weight-thin"
-                :class="[$vuetify.breakpoint.mdAndDown ? 'title' : 'text-h3']"
+                :class="$vuetify.breakpoint.mdAndDown ? 'title' : 'text-h3'"
               >
                 The Progressive
               </h1>
               <h1
                 class="font-weight-thin ml-2"
-                :class="[$vuetify.breakpoint.mdAndDown ? 'title' : 'text-h4']"
+                :class="$vuetify.breakpoint.mdAndDown ? 'title' : 'text-h4'"
               >
                 Language Learning Program
               </h1>
             </div>
             <v-dialog
               v-model="dialog"
-              :width="[$vuetify.breakpoint.lgAndUp ? '1100' : '600']"
+              :width="$vuetify.breakpoint.lgAndUp ? '1100' : '600'"
             >
               <template v-slot:activator="{ on }">
                 <div
@@ -74,7 +113,7 @@
               <v-card>
                 <iframe
                   width="100%"
-                  :height="[$vuetify.breakpoint.lgAndUp ? '600' : '315']"
+                  :height="$vuetify.breakpoint.lgAndUp ? '600' : '315'"
                   src="https://www.youtube.com/embed/ClZm_osejpQ"
                   class="pa-5"
                   frameborder="0"
@@ -117,12 +156,13 @@
 export default {
   data: () => {
     return {
+      drawer: false,
       dialog: false,
       navOptions: [
-        { text: 'about' },
-        { text: 'team' },
-        { text: 'price' },
-        { text: 'help' },
+        { text: 'about', icon: 'mdi-forum' },
+        { text: 'team', icon: 'mdi-account-group' },
+        { text: 'price', icon: 'mdi-reminder' },
+        { text: 'help', icon: 'mdi-help-circle-outline' },
       ],
       highlights: [
         {
@@ -148,8 +188,8 @@ export default {
   computed: {
     size() {
       const size = {
-        xs: 'medium',
-        sm: 'medium',
+        xs: 'sm',
+        sm: 'sm',
         md: 'medium',
         lg: 'large',
         xl: 'x-large',
