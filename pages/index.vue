@@ -55,7 +55,7 @@
     <v-main>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center" no-gutters>
-          <v-col class="pa-0 ma-0" xs="12" sm="6">
+          <v-col class="pa-0 ma-0" xs="12" sm="5" cols="12">
             <v-img
               :max-height="$vuetify.breakpoint.lgAndUp ? 225 : 150"
               :class="$vuetify.breakpoint.mdAndDown ? '' : 'pb-5'"
@@ -65,7 +65,8 @@
           </v-col>
           <v-col
             xs="12"
-            sm="6"
+            sm="5"
+            cols="12"
             :class="
               $vuetify.breakpoint.mdAndDown
                 ? 'text-center'
