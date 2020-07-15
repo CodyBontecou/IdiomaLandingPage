@@ -1,12 +1,12 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="app">
     <v-app-bar app color="transparent" flat>
       <v-app-bar-nav-icon
         v-show="$vuetify.breakpoint.smAndDown"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
       <v-toolbar-title v-show="$vuetify.breakpoint.mdAndUp">
-        Idioma
+        {{ brand.name }}
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn
@@ -15,6 +15,7 @@
         :key="item.id"
         text
         class="text-capitalize underlined_button"
+        color="primary"
       >
         <span class="text--black">{{ item.text }}</span>
       </v-btn>
@@ -29,10 +30,16 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title>
-            <v-img max-height="100" contain src="logo.png"></v-img>
+            <v-avatar>
+              <v-img
+                max-height="100"
+                contain
+                src="https://scontent.fpbc2-1.fna.fbcdn.net/v/t1.0-9/98830035_120189929685996_7457383322709131264_n.png?_nc_cat=104&_nc_sid=09cbfe&_nc_eui2=AeHc5USt-zqQ5aqhuNE8LqyX-B3tmZK48yz4He2ZkrjzLNI-aWaUUmA6Hh8oojM9D7ao_BiIpjR72GuhDcuWQjtY&_nc_oc=AQmT-5LpDCvzRwnMJyy71cmp3Bvgk_oMvBSz8E9PEWPmEQxNp6ug2qxAsDkG_I3xLIo&_nc_ht=scontent.fpbc2-1.fna&oh=cd889f318ef91dd14530bb9591ee75f2&oe=5F344BC6"
+              ></v-img>
+            </v-avatar>
           </v-list-item-title>
           <v-list-item-subtitle class="title text-center pt-3">
-            Idioma
+            {{ brand.name }}
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -56,13 +63,24 @@
     <v-main>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center" no-gutters>
-          <v-col class="pa-0 ma-0" xs="12" sm="5" cols="12">
-            <v-img
-              :max-height="$vuetify.breakpoint.lgAndUp ? 225 : 150"
-              :class="$vuetify.breakpoint.mdAndDown ? '' : 'pb-5'"
-              contain
-              src="logo.png"
-            ></v-img>
+          <v-col
+            class="pa-0 ma-0"
+            xs="12"
+            sm="5"
+            cols="12"
+            :class="
+              $vuetify.breakpoint.mdAndDown
+                ? 'text-center pb-5'
+                : 'text-right pr-10'
+            "
+          >
+            <v-avatar size="258" class="pa-0 ma-0">
+              <v-img
+                :class="$vuetify.breakpoint.mdAndDown ? '' : 'pb-5'"
+                contain
+                src="https://scontent.fpbc2-1.fna.fbcdn.net/v/t1.0-9/98830035_120189929685996_7457383322709131264_n.png?_nc_cat=104&_nc_sid=09cbfe&_nc_eui2=AeHc5USt-zqQ5aqhuNE8LqyX-B3tmZK48yz4He2ZkrjzLNI-aWaUUmA6Hh8oojM9D7ao_BiIpjR72GuhDcuWQjtY&_nc_oc=AQmT-5LpDCvzRwnMJyy71cmp3Bvgk_oMvBSz8E9PEWPmEQxNp6ug2qxAsDkG_I3xLIo&_nc_ht=scontent.fpbc2-1.fna&oh=cd889f318ef91dd14530bb9591ee75f2&oe=5F344BC6"
+              ></v-img>
+            </v-avatar>
           </v-col>
           <v-col
             xs="12"
@@ -107,7 +125,7 @@
                     v-on="on"
                   >
                     <v-icon class="pr-2">mdi-play-circle</v-icon>
-                    <span class="font-weight-medium">Why Idioma?</span>
+                    <span class="font-weight-medium">Why us?</span>
                   </v-btn>
                   <v-btn rounded v-bind="size" outlined color="primary">
                     <span class="font-weight-medium">Get Started</span>
@@ -119,7 +137,7 @@
                   width="100%"
                   :height="$vuetify.breakpoint.lgAndUp ? '600' : '315'"
                   src="https://www.youtube.com/embed/ClZm_osejpQ"
-                  class="pa-5"
+                  class="pt-5 px-5"
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
@@ -162,6 +180,7 @@ export default {
     return {
       drawer: false,
       dialog: false,
+      brand: { name: 'Language World Online' },
       navOptions: [
         { text: 'about', icon: 'mdi-forum' },
         { text: 'team', icon: 'mdi-account-group' },
@@ -205,10 +224,13 @@ export default {
 </script>
 
 <style>
+#app {
+  background-color: #fcef87;
+}
 .underlined_button:before {
   color: transparent;
 }
 .underlined_button:hover {
-  border-bottom: 2px solid rgb(25, 118, 210);
+  border-bottom: 2px solid #ffb91b;
 }
 </style>

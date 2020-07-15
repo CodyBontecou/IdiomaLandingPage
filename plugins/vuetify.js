@@ -11,6 +11,7 @@ export default (ctx) => {
     theme: {
       themes: {
         light: {
+          primary: '#FFB91B',
           // primary: colors.red.accent1,
         },
         dark: {
