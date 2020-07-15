@@ -23,6 +23,7 @@
     <v-navigation-drawer
       v-show="$vuetify.breakpoint.mdAndDown"
       v-model="drawer"
+      disable-resize-watcher
       app
     >
       <v-list-item>
