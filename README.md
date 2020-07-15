@@ -1,5 +1,7 @@
 # frontend
 
+A basic demo can be seen at [spanish.netlify.app](https://spanish.netlify.app).
+
 ## Build Setup
 
 ```bash
