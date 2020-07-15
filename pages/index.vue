@@ -224,13 +224,10 @@ export default {
 </script>
 
 <style>
-#app {
-  background-color: #fcef87;
-}
 .underlined_button:before {
   color: transparent;
 }
 .underlined_button:hover {
-  border-bottom: 2px solid #ffb91b;
+  border-bottom: 2px solid #fffde7;
 }
 </style>
