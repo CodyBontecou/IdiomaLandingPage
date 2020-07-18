@@ -5,7 +5,7 @@
         v-show="$vuetify.breakpoint.smAndDown"
         @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <nuxt-link id="toolbar-title" to="/">
+      <nuxt-link class="toolbar-title" to="/">
         <v-toolbar-title v-show="$vuetify.breakpoint.mdAndUp">
           {{ brand.name }}
         </v-toolbar-title>
@@ -35,9 +35,11 @@
               <v-img contain src="/logo.png"></v-img>
             </v-avatar>
           </v-list-item-title>
-          <v-list-item-subtitle class="title text-center pt-3">
-            {{ brand.name }}
-          </v-list-item-subtitle>
+          <nuxt-link class="toolbar-title" to="/">
+            <v-list-item-subtitle class="title text-center pt-3">
+              {{ brand.name }}
+            </v-list-item-subtitle>
+          </nuxt-link>
         </v-list-item-content>
       </v-list-item>
 
@@ -86,10 +88,10 @@ export default {
 </script>
 
 <style>
-#toolbar-title {
+.toolbar-title {
   text-decoration: none;
   text-underline: none;
-  color: black;
+  color: black !important;
 }
 .underlined_button:before {
   color: transparent;
