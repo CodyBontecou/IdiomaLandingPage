@@ -52,6 +52,12 @@ export default {
           image: '/favicon.png',
         },
         {
+          name: 'Cody',
+          description:
+            'Language World Online is designed to expose and teach you from our diverse team of professionals. We are flexible in our classroom sizes, adapting to what works best for you.',
+          image: '/favicon.png',
+        },
+        {
           name: 'Daniela',
           description:
             'Language World Online is designed to expose and teach you from our diverse team of professionals. We are flexible in our classroom sizes, adapting to what works best for you.',
