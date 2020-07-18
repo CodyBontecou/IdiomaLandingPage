@@ -17,7 +17,7 @@
             <v-img
               :class="$vuetify.breakpoint.mdAndDown ? '' : 'pb-5'"
               contain
-              src="https://scontent.fpbc2-1.fna.fbcdn.net/v/t1.0-9/98830035_120189929685996_7457383322709131264_n.png?_nc_cat=104&_nc_sid=09cbfe&_nc_eui2=AeHc5USt-zqQ5aqhuNE8LqyX-B3tmZK48yz4He2ZkrjzLNI-aWaUUmA6Hh8oojM9D7ao_BiIpjR72GuhDcuWQjtY&_nc_oc=AQmT-5LpDCvzRwnMJyy71cmp3Bvgk_oMvBSz8E9PEWPmEQxNp6ug2qxAsDkG_I3xLIo&_nc_ht=scontent.fpbc2-1.fna&oh=cd889f318ef91dd14530bb9591ee75f2&oe=5F344BC6"
+              src="/logo.png"
             ></v-img>
           </v-avatar>
         </v-col>
@@ -116,6 +116,7 @@
 export default {
   data: () => {
     return {
+      logo: '~/assets/logo.png',
       highlights: [
         {
           title: 'Learn',
