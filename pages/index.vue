@@ -121,7 +121,7 @@ export default {
         {
           title: 'Learn',
           description:
-            "With Spanish being the fourth most spoken language on our planet, it's an excellent time to being your journey in being able to communicate with some of the most beautiful cultures of our world!",
+            "With Spanish being the fourth most spoken language on our planet, it's an excellent time to begin your journey in being able to communicate with some of the most beautiful cultures of the world!",
         },
         {
           title: 'Speak',
