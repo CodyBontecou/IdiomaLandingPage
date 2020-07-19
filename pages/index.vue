@@ -99,11 +99,11 @@
           sm="3"
         >
           <v-card class="mx-auto" max-width="255" flat>
-            <v-card-text class="font-weight-thin">
-              <div class="text-h6 primary--text font-weight-medium">
+            <v-card-text>
+              <div class="text-h6 font-weight-medium">
                 {{ info.title }}
               </div>
-              <div class="text--primary">{{ info.description }}</div>
+              <div class="font-weight-thin">{{ info.description }}</div>
             </v-card-text>
           </v-card>
         </v-col>
