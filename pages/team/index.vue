@@ -3,16 +3,14 @@
     <v-container class="fill-height" fluid>
       <v-row align="center" justify="top">
         <v-col class="text-center" cols="12" xs="12">
-          <h1
-            class="text-uppercase font-weight-black text-xs-h3 text-lg-h1"
-          >
+          <h1 class="text-uppercase font-weight-black text-h2 text-lg-h1">
             Who we are
           </h1>
           <h2 class="text-h5 text-uppercase font-weight-medium">
-            A language teaching program that's different from the rest
+            A language learning program that's different from the rest
           </h2>
           <v-card class="mx-auto" max-width="800" flat>
-            <v-card-text class="font-weight-light">
+            <v-card-text class="text-h6 font-weight-light">
               Language World Online is a fully remote language teaching school
               that specializes in helping you learn Spanish. We are passionate
               about what we do, and we are determined to achieve incredible
