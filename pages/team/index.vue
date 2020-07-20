@@ -6,7 +6,7 @@
           <h1 class="text-uppercase font-weight-black text-h2 text-lg-h1">
             Who we are
           </h1>
-          <h2 class="text-h5 text-uppercase font-weight-medium">
+          <h2 class="text-h5 text-uppercase font-weight-medium py-4">
             A language learning program that's different from the rest
           </h2>
           <v-card class="mx-auto" max-width="800" flat>
