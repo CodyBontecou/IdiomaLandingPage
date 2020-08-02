@@ -1,10 +1,5 @@
 <template>
-  <v-navigation-drawer
-    v-show="$vuetify.breakpoint.mdAndDown"
-    v-model="drawer"
-    disable-resize-watcher
-    app
-  >
+  <v-navigation-drawer v-model="drawer" disable-resize-watcher app>
     <v-list-item>
       <v-list-item-content class="text-center">
         <v-list-item-title>
@@ -40,7 +35,6 @@ export default {
   name: 'Sidebar',
   data: () => {
     return {
-      drawer: false,
       brand: { name: 'Hello Idioma' },
       navOptions: [
         { text: 'home', icon: 'mdi-home', to: '/' },
@@ -51,6 +45,16 @@ export default {
         { text: 'help', icon: 'mdi-help-circle-outline', to: '/help' },
       ],
     }
+  },
+  computed: {
+    drawer: {
+      get() {
+        return this.$store.state.drawer
+      },
+      set(value) {
+        this.$store.commit('setDrawer', value)
+      },
+    },
   },
 }
 </script>
