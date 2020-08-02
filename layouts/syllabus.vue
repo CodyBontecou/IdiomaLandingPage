@@ -7,7 +7,7 @@
       <v-container fluid>
         <v-row align="start" justify="center">
           <v-col xs="12" cols="12">
-            <div class="pt-6 px-16 mr-16">
+            <div class="pt-6 px-md-16 mr-md-16">
               <Nuxt />
             </div>
           </v-col>

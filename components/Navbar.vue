@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="transparent" flat clipped-left>
+  <v-app-bar app color="transparent" flat clipped-left hide-on-scroll>
     <v-app-bar-nav-icon
       v-show="$vuetify.breakpoint.smAndDown"
       @click="drawer = !drawer"
@@ -10,6 +10,7 @@
       </v-toolbar-title>
     </nuxt-link>
     <v-spacer></v-spacer>
+
     <v-btn
       v-for="item in navOptions"
       v-show="$vuetify.breakpoint.lgAndUp"
