@@ -14,7 +14,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: 'Language World Online',
+    title: 'Hello Idioma',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -28,7 +28,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: 'favicon2.png',
+        href: 'logo_no_words.png',
       },
     ],
   },

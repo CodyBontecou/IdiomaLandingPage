@@ -43,8 +43,6 @@
         </v-list-item-content>
       </v-list-item>
 
-      <v-divider></v-divider>
-
       <v-list dense nav>
         <v-list-item
           v-for="item in navOptions"
@@ -63,7 +61,41 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <Nuxt />
+    <v-navigation-drawer app permanent clipped>
+      <v-list dense nav class="pt-10">
+        <v-list-item class="pb-5">
+          <nuxt-link to="/syllabus" class="list-title-link">
+            <span class="text-h6 font-weight-bold">Syllabus</span>
+          </nuxt-link>
+        </v-list-item>
+
+        <v-list-item
+          v-for="item in syllabus"
+          :key="item.id"
+          :to="item.to"
+          dense
+          nuxt
+          color="primary"
+        >
+          <v-list-item-content>
+            <v-list-item-title class="text-capitalize subtitle-1">
+              {{ item.name }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <v-main>
+      <v-container fluid>
+        <v-row align="start" justify="center">
+          <v-col xs="12" cols="12">
+            <div class="pt-6 px-16 mr-16">
+              <Nuxt />
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
@@ -73,6 +105,14 @@ export default {
     return {
       drawer: false,
       brand: { name: 'Hello Idioma' },
+      syllabus: [
+        { name: 'Basic - A1', to: '/syllabus/a1' },
+        { name: 'Basic - A2', to: '/syllabus/a2' },
+        { name: 'Independent - B1', to: '/syllabus/b1' },
+        { name: 'Independent - B2', to: '/syllabus/b2' },
+        { name: 'Proficient - C1', to: '/syllabus/c1' },
+        { name: 'Proficient - C2', to: '/syllabus/c2' },
+      ],
       navOptions: [
         { text: 'home', icon: 'mdi-home', to: '/' },
         { text: 'syllabus', icon: 'mdi-forum', to: '/syllabus' },
@@ -87,17 +127,9 @@ export default {
 }
 </script>
 
-<style>
-.toolbar-title {
+<style scoped>
+.list-title-link {
   text-decoration: none;
-  text-underline: none;
-  color: black !important;
-}
-.underlined_button:before {
-  color: transparent;
-}
-
-.underlined_button:hover {
-  border-bottom: 2px solid #03bdf1;
+  color: inherit;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <v-main>
     <v-container class="fill-height" fluid>
-      <v-row align="center" justify="center" no-gutters>
+      <v-row align="center" justify="center">
         <v-col
           class="text-md-right pr-md-5 text-center pb-10 pb-md-0"
           xs="12"
@@ -9,7 +9,7 @@
           cols="12"
         >
           <v-avatar size="258">
-            <v-img class="" contain src="/logo.png"></v-img>
+            <v-img class="" contain src="/logo_no_words.png"></v-img>
           </v-avatar>
         </v-col>
         <v-col
@@ -51,7 +51,7 @@
               <iframe
                 width="100%"
                 :height="$vuetify.breakpoint.lgAndUp ? '600' : '315'"
-                src="https://www.youtube.com/embed/ClZm_osejpQ"
+                src="https://www.youtube.com/embed/2YBtspm8j8M"
                 class="pt-5 px-5"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -92,6 +92,7 @@
 export default {
   data: () => {
     return {
+      dialog: false,
       logo: '~/assets/logo.png',
       highlights: [
         {
@@ -107,7 +108,7 @@ export default {
         {
           title: 'Connect',
           description:
-            'Language World Online is designed to expose and teach you from our diverse team of professionals. We are flexible in our classroom sizes, adapting to what works best for you.',
+            'Hello Idioma is designed to expose and teach you from our diverse team of professionals. We are flexible in our classroom sizes, adapting to what works best for you.',
         },
       ],
     }
