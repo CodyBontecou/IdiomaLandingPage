@@ -72,7 +72,7 @@ export default {
         {
           name: 'Cody Bontecou',
           description: '',
-          image: '/cody.jpg',
+          image: '/cody.jpeg',
           role: 'Software & Marketing',
         },
       ],

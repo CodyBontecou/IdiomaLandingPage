@@ -26,6 +26,38 @@
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon color="primary">mdi-forum</v-icon>
+        </v-list-item-icon>
+        <v-menu offset-y open-on-hover close-delay="200">
+          <template v-slot:activator="{ on, attrs }">
+            <v-list-item-content>
+              <nuxt-link to="/syllabus">
+                <v-list-item-title
+                  class="text-capitalize subtitle-1"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  Syllabus
+                </v-list-item-title>
+              </nuxt-link>
+            </v-list-item-content>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in syllabus"
+              :key="index"
+              :to="item.to"
+            >
+              <v-list-item-title>{{ item.name }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+        <v-list-item-icon>
+          <v-icon color="primary">mdi-menu-down</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -38,11 +70,19 @@ export default {
       brand: { name: 'Hello Idioma' },
       navOptions: [
         { text: 'home', icon: 'mdi-home', to: '/' },
-        { text: 'syllabus', icon: 'mdi-forum', to: '/syllabus' },
+        // { text: 'syllabus', icon: 'mdi-forum', to: '/syllabus' },
         { text: 'team', icon: 'mdi-account-group', to: '/team' },
         { text: 'price', icon: 'mdi-reminder', to: '/price' },
         { text: 'blog', icon: 'mdi-microphone', to: '/blog' },
         { text: 'help', icon: 'mdi-help-circle-outline', to: '/help' },
+      ],
+      syllabus: [
+        { name: 'Basic - A1', to: '/syllabus/a1' },
+        { name: 'Basic - A2', to: '/syllabus/a2' },
+        { name: 'Independent - B1', to: '/syllabus/b1' },
+        { name: 'Independent - B2', to: '/syllabus/b2' },
+        { name: 'Proficient - C1', to: '/syllabus/c1' },
+        { name: 'Proficient - C2', to: '/syllabus/c2' },
       ],
     }
   },
@@ -65,11 +105,8 @@ export default {
   text-underline: none;
   color: black !important;
 }
-.underlined_button:before {
-  color: transparent;
-}
-
-.underlined_button:hover {
-  border-bottom: 2px solid #03bdf1;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 </style>
