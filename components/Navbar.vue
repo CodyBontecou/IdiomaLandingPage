@@ -24,18 +24,16 @@
 
     <v-menu offset-y open-on-hover>
       <template v-slot:activator="{ on, attrs }">
-        <nuxt-link to="/syllabus">
-          <v-btn
-            v-show="$vuetify.breakpoint.mdAndUp"
-            text
-            class="text-capitalize subtitle-1"
-            v-bind="attrs"
-            v-on="on"
-          >
-            <span class="text--black">Syllabus</span>
-            <v-icon class="grey--text">mdi-menu-down</v-icon>
-          </v-btn>
-        </nuxt-link>
+        <v-btn
+          v-show="$vuetify.breakpoint.mdAndUp"
+          text
+          class="text-capitalize subtitle-1"
+          v-bind="attrs"
+          v-on="on"
+        >
+          <span class="text--black">Syllabus</span>
+          <v-icon class="grey--text">mdi-menu-down</v-icon>
+        </v-btn>
       </template>
       <v-list>
         <v-list-item
@@ -64,6 +62,7 @@ export default {
         { text: 'help', icon: 'mdi-help-circle-outline', to: '/help' },
       ],
       syllabus: [
+        { name: 'Information', to: '/syllabus' },
         { name: 'Basic - A1', to: '/syllabus/a1' },
         { name: 'Basic - A2', to: '/syllabus/a2' },
         { name: 'Independent - B1', to: '/syllabus/b1' },

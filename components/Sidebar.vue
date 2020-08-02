@@ -33,15 +33,13 @@
         <v-menu offset-y open-on-hover close-delay="200">
           <template v-slot:activator="{ on, attrs }">
             <v-list-item-content>
-              <nuxt-link to="/syllabus">
-                <v-list-item-title
-                  class="text-capitalize subtitle-1"
-                  v-bind="attrs"
-                  v-on="on"
-                >
-                  Syllabus
-                </v-list-item-title>
-              </nuxt-link>
+              <v-list-item-title
+                class="text-capitalize subtitle-1"
+                v-bind="attrs"
+                v-on="on"
+              >
+                Syllabus
+              </v-list-item-title>
             </v-list-item-content>
           </template>
           <v-list>
@@ -77,6 +75,7 @@ export default {
         { text: 'help', icon: 'mdi-help-circle-outline', to: '/help' },
       ],
       syllabus: [
+        { name: 'Information', to: '/syllabus' },
         { name: 'Basic - A1', to: '/syllabus/a1' },
         { name: 'Basic - A2', to: '/syllabus/a2' },
         { name: 'Independent - B1', to: '/syllabus/b1' },
