@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import { Examples } from '@/.nuxt/components'
 import DividedTitle from '@/components/DividedTitle'
+import Examples from '@/components/Examples'
 
 export default {
   layout: 'syllabus',

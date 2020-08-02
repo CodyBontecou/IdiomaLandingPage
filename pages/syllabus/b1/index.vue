@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { Examples } from '@/.nuxt/components'
+import Examples from '@/components/Examples'
 import DividedTitle from '@/components/DividedTitle'
 
 export default {
