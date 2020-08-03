@@ -34,7 +34,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn rounded v-bind="size" color="primary" text>
+            <v-btn rounded v-bind="size" color="primary" text to="/signup/">
               <span class="font-weight-medium">Get Started</span>
             </v-btn>
           </v-card-actions>
