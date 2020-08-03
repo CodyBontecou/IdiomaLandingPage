@@ -42,7 +42,13 @@
                   <v-icon class="pr-2">mdi-play-circle</v-icon>
                   <span class="font-weight-medium">Why us?</span>
                 </v-btn>
-                <v-btn rounded v-bind="size" outlined color="primary" to="/signup/">
+                <v-btn
+                  rounded
+                  v-bind="size"
+                  outlined
+                  color="primary"
+                  to="/signup/"
+                >
                   <span class="font-weight-medium">Get Started</span>
                 </v-btn>
               </div>
