@@ -40,7 +40,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~plugins/vuetify.js', { src: '~plugins/ga.js', mode: 'client' }],
+  plugins: ['~plugins/vuetify.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -52,6 +52,12 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-162353805-1',
+      },
+    ],
   ],
   /*
    ** Nuxt.js modules
