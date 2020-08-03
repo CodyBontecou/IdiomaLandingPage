@@ -87,7 +87,9 @@ export default {
   },
   methods: {
     validate() {
-      this.$refs.form.validate()
+      if (this.$refs.form.validate()) {
+        this.$refs.form.submit()
+      }
     },
   },
 }
