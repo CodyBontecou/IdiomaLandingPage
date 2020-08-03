@@ -109,7 +109,7 @@ export default {
         {
           title: 'Speak',
           description:
-            "We designed our classes to get your speaking. From day one, we'll have you working on pronunciation, conjugations, and more to get you confident in having conversations alongside native speakers.",
+            "We designed our classes to get you speaking. From day one, we'll have you working on pronunciation, conjugations, and more to get you confident in having conversations alongside native speakers.",
         },
         {
           title: 'Connect',
