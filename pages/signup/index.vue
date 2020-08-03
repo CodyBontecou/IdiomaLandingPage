@@ -44,6 +44,7 @@
             color="primary"
             class="mt-5"
             type="submit"
+            submit.prevent="onSubmit"
             @click="validate"
           >
             Send
