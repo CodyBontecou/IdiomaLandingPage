@@ -68,6 +68,7 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    '@nuxtjs/sitemap',
   ],
   /*
    ** Axios module configuration
