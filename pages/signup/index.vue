@@ -10,7 +10,9 @@
           method="POST"
           data-netlify="true"
           lazy-validation
+          action="/signup/success/"
         >
+          <input type="hidden" name="form-name" value="contact" />
           <v-text-field
             v-model="name"
             :rules="nameRules"
@@ -30,11 +32,11 @@
           ></v-text-field>
 
           <v-textarea
-            v-model="textArea"
-            :rules="textAreaRules"
+            v-model="message"
+            :rules="messageRules"
             :counter="300"
             solo
-            name="textArea"
+            name="message"
             label="Tell us about yourself"
           ></v-textarea>
 
@@ -79,8 +81,8 @@ export default {
         (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
         (v) => (v && v.length <= 20) || 'Email must be less than 20 characters',
       ],
-      textArea: '',
-      textAreaRules: [
+      message: '',
+      messageRules: [
         (v) =>
           (v && v.length <= 300) ||
           'Description must be less than 300 characters',
