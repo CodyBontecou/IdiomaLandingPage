@@ -25,7 +25,7 @@
     <v-menu offset-y open-on-hover>
       <template v-slot:activator="{ on, attrs }">
         <v-btn
-          v-show="$vuetify.breakpoint.mdAndUp"
+          v-show="$vuetify.breakpoint.lgAndUp"
           text
           class="text-capitalize subtitle-1"
           v-bind="attrs"
@@ -55,11 +55,9 @@ export default {
     return {
       navOptions: [
         { text: 'home', icon: 'mdi-home', to: '/' },
-        // { text: 'syllabus', icon: 'mdi-forum', to: '/syllabus' },
+        { text: 'sign up', icon: 'mdi-play-circle', to: '/signup' },
         { text: 'team', icon: 'mdi-account-group', to: '/team' },
         { text: 'price', icon: 'mdi-reminder', to: '/price' },
-        { text: 'blog', icon: 'mdi-microphone', to: '/blog' },
-        { text: 'help', icon: 'mdi-help-circle-outline', to: '/help' },
       ],
       syllabus: [
         { name: 'Information', to: '/syllabus' },
