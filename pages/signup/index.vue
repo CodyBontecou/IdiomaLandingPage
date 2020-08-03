@@ -9,6 +9,7 @@
         method="POST"
         data-netlify="true"
         lazy-validation
+        action="/signup/success/"
       >
         <v-text-field
           v-model="name"
