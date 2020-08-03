@@ -44,8 +44,7 @@
               color="primary"
               class="mt-5"
               type="submit"
-              submit.prevent="onSubmit"
-              @click="validate"
+              @submit.prevent="handleSubmit"
             >
               Send
             </v-btn>
@@ -89,7 +88,7 @@ export default {
     }
   },
   methods: {
-    validate() {
+    handleSubmit() {
       if (this.$refs.form.validate()) {
         this.$refs.form.submit()
       }
