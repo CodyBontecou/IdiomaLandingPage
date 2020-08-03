@@ -42,7 +42,7 @@
                   <v-icon class="pr-2">mdi-play-circle</v-icon>
                   <span class="font-weight-medium">Why us?</span>
                 </v-btn>
-                <v-btn rounded v-bind="size" outlined color="primary">
+                <v-btn rounded v-bind="size" outlined color="primary" to="/signup/">
                   <span class="font-weight-medium">Get Started</span>
                 </v-btn>
               </div>
@@ -59,7 +59,7 @@
               ></iframe>
               <v-toolbar bottom flat>
                 <v-spacer></v-spacer>
-                <v-btn color="primary">Get Started</v-btn>
+                <v-btn color="primary" to="/signup/">Get Started</v-btn>
               </v-toolbar>
             </v-card>
           </v-dialog>

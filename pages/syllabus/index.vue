@@ -16,7 +16,7 @@
     </p>
 
     <div class="text-left pt-16">
-      <v-btn rounded v-bind="size" color="primary" class="mr-2">
+      <v-btn rounded v-bind="size" color="primary" class="mr-2" to="/signup/">
         <span class="font-weight-medium">Get Started</span>
       </v-btn>
     </div>
