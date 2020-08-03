@@ -2,54 +2,56 @@
   <div class="px-16">
     <DividedTitle :title="title" :subtitle="subtitle"></DividedTitle>
     <div class="pr-lg-16 mr-lg-16 pt-16 mt-lg-16">
-      <v-form
-        ref="form"
-        v-model="valid"
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        lazy-validation
-      >
-        <v-text-field
-          v-model="name"
-          :rules="nameRules"
-          label="Name"
-          name="name"
-          required
-          solo
-        ></v-text-field>
+      <client-only>
+        <v-form
+          ref="form"
+          v-model="valid"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          lazy-validation
+        >
+          <v-text-field
+            v-model="name"
+            :rules="nameRules"
+            label="Name"
+            name="name"
+            required
+            solo
+          ></v-text-field>
 
-        <v-text-field
-          v-model="email"
-          :rules="emailRules"
-          label="E-mail"
-          name="email"
-          required
-          solo
-        ></v-text-field>
+          <v-text-field
+            v-model="email"
+            :rules="emailRules"
+            label="E-mail"
+            name="email"
+            required
+            solo
+          ></v-text-field>
 
-        <v-textarea
-          v-model="textArea"
-          :rules="textAreaRules"
-          :counter="300"
-          solo
-          name="textArea"
-          label="Tell us about yourself"
-        ></v-textarea>
+          <v-textarea
+            v-model="textArea"
+            :rules="textAreaRules"
+            :counter="300"
+            solo
+            name="textArea"
+            label="Tell us about yourself"
+          ></v-textarea>
 
-        <v-col class="text-right">
-          <v-btn
-            :disabled="!valid"
-            color="primary"
-            class="mt-5"
-            type="submit"
-            submit.prevent="onSubmit"
-            @click="validate"
-          >
-            Send
-          </v-btn>
-        </v-col>
-      </v-form>
+          <v-col class="text-right">
+            <v-btn
+              :disabled="!valid"
+              color="primary"
+              class="mt-5"
+              type="submit"
+              submit.prevent="onSubmit"
+              @click="validate"
+            >
+              Send
+            </v-btn>
+          </v-col>
+        </v-form>
+      </client-only>
     </div>
   </div>
 </template>
