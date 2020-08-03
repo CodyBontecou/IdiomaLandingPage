@@ -1,91 +1,157 @@
 <template>
-  <v-main>
-    <v-container class="fill-height" fluid>
-      <v-row align="center" justify="center">
-        <v-col class="text-center" cols="12" xs="12">
-          <h1 class="text-uppercase font-weight-black text-h5">
-            Simple, transparent pricing.
-          </h1>
-          <h2 class="text-h5 text-uppercase font-weight-medium py-4">
-            Always know what you’ll pay.
-          </h2>
-        </v-col>
-      </v-row>
-      <v-row align="center" justify="left">
-        <v-col class="text-center" cols="12" xs="12">
-          <v-card class="mx-auto" max-width="560">
-            <v-card-text class="px-0">
-              <div class="text-uppercase primary--text price-card-title">
-                Pay as you go
-              </div>
-              <v-divider class="mb-20"></v-divider>
-              <p class="display-1 text--primary">
-                $10
-              </p>
-              <p>Per hour</p>
-              <div class="text--primary">
-                well meaning and kindly.<br />
-                "a benevolent smile"
-              </div>
-            </v-card-text>
-            <v-card-actions>
-              <v-btn text color="deep-purple accent-4">
-                Learn More
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-main>
+  <div class="px-16">
+    <DividedTitle :title="title" :subtitle="subtitle"></DividedTitle>
+    <v-row align="center" justify="center" class="pb-16">
+      <v-col
+        v-for="c in classes"
+        :key="c.id"
+        xs="12"
+        md=""
+        cols="12"
+        class="text-center"
+      >
+        <v-card class="mx-auto" max-width="450">
+          <v-card-text>
+            <div class="text-uppercase py-5 text-h6">
+              {{ c.type }}
+            </div>
+            <v-divider></v-divider>
+            <p class="pt-5">
+              <span class="display-1">${{ c.price }}</span> / hour
+              <span v-if="c.price === '6'"> per student.</span>
+            </p>
+            <v-list>
+              <v-list-item
+                v-for="highlight in c.highlights"
+                :key="highlight.id"
+              >
+                <v-list-item-icon>
+                  <v-icon color="primary">{{ highlight.icon }}</v-icon>
+                </v-list-item-icon>
+                {{ highlight.text }}
+              </v-list-item>
+            </v-list>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn rounded v-bind="size" color="primary" text>
+              <span class="font-weight-medium">Get Started</span>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+    <DividedTitle
+      :title="discountsTitle"
+      :subtitle="discountsSubtitle"
+    ></DividedTitle>
+    <v-data-table
+      :headers="headers"
+      :items="discounts"
+      class="elevation-1 mt-16"
+    ></v-data-table>
+  </div>
 </template>
 
 <script>
+import DividedTitle from '@/components/DividedTitle'
+
 export default {
+  layout: 'primary',
+  components: {
+    DividedTitle,
+  },
   data: () => {
     return {
-      classTypes: [
+      title: 'Simple, flexible pricing.',
+      subtitle: '',
+      discountsTitle: 'Discounts',
+      discountsSubtitle:
+        'A discount will be applied to your total invoice if you pay for at least 4 classes in advanced.',
+      classes: [
         {
-          price: '$10/hour',
-          name: 'One on one lesson',
-          image: '/woman_in_black.jpg',
+          type: 'Private class',
+          price: '10',
+          highlights: [
+            {
+              icon: 'mdi-notebook',
+              text: 'One on one classes.',
+            },
+            {
+              icon: 'mdi-star-circle',
+              text: 'Specialized for you.',
+            },
+            {
+              icon: 'mdi-arrow-down-circle',
+              text: 'At your own rhythm.',
+            },
+          ],
         },
-        { price: '$6/hour', name: 'Group lesson', image: '/group_call.jpg' },
+        {
+          type: 'Group classes',
+          price: '6',
+          highlights: [
+            {
+              icon: 'mdi-notebook',
+              text: '2 - 4 students.',
+            },
+            {
+              icon: 'mdi-star-circle',
+              text: 'Learn in a group environment.',
+            },
+            {
+              icon: 'mdi-arrow-down-circle',
+              text: 'Converse and connect with one another.',
+            },
+          ],
+        },
+      ],
+      headers: [
+        {
+          text: '# of classes',
+          align: 'start',
+          sortable: false,
+          value: 'numClasses',
+        },
+        { text: 'Normal Price', value: 'normalPrice' },
+        { text: 'Discount', value: 'discount' },
+        { text: 'New Price', value: 'newPrice' },
+      ],
+      discounts: [
+        {
+          numClasses: '16 classes or more',
+          normalPrice: '$160',
+          discount: '20%',
+          newPrice: '$128',
+        },
+        {
+          numClasses: '8 classes or more',
+          normalPrice: '$80',
+          discount: '15%',
+          newPrice: '$68',
+        },
+        {
+          numClasses: '4 classes or more',
+          normalPrice: '$40',
+          discount: '10%',
+          newPrice: '$36',
+        },
       ],
     }
+  },
+  computed: {
+    size() {
+      const size = {
+        xs: 'sm',
+        sm: 'sm',
+        md: 'medium',
+        lg: 'large',
+        xl: 'x-large',
+      }[this.$vuetify.breakpoint.name]
+      return size ? { [size]: true } : {}
+    },
   },
 }
 </script>
 
-<style scoped>
-.price-background {
-  top: calc(50% + 175px);
-}
-
-.price-background.updated {
-  top: calc(50% + 275px);
-}
-
-.price-background .stripe {
-  height: 155px;
-}
-
-.price-background .s0 {
-  height: 5000px;
-  bottom: 10px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#4dc076),
-    to(#b3e895)
-  );
-  background: linear-gradient(90deg, #4dc076, #b3e895);
-}
-.price-card-title {
-  font-size: 1.8em;
-  font-weight: 500;
-  padding: 35px 30px 20px;
-  margin: 0 auto 20px;
-}
-</style>
+<style scoped></style>
