@@ -70,6 +70,10 @@ export default {
     '@nuxt/content',
     '@nuxtjs/sitemap',
   ],
+
+  sitemap: {
+    hostname: 'https://helloidioma.com',
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
