@@ -1,53 +1,30 @@
 <template>
-  <v-main>
-    <v-container fluid>
-      <v-row align="start" justify="center">
-        <v-col xs="12" cols="12">
-          <div class="pt-6 px-md-16 mr-md-16">
-            <div class="px-16">
-              <DividedTitle :title="title" :subtitle="subtitle"></DividedTitle>
-              <v-row align="center" justify="center" class="pt-16">
-                <v-col
-                  v-for="member in team"
-                  :key="member.id"
-                  xs="12"
-                  md=""
-                  cols="12"
-                  class="text-center pa-0 ma-0"
-                >
-                  <v-card class="mx-auto" max-width="255" flat>
-                    <v-row align="center" justify="center" class="pa-0 ma-0">
-                      <v-avatar size="150">
-                        <v-img :src="member.image"></v-img>
-                      </v-avatar>
-                    </v-row>
-                    <v-row align="center" justify="center">
-                      <v-card-text class="font-weight-thin">
-                        <h3 class="text-h5 font-weight-bold">
-                          {{ member.name }}
-                        </h3>
-                        <h3 class="text-h6 font-weight-bold primary--text">
-                          {{ member.role }}
-                        </h3>
-                      </v-card-text>
-                    </v-row>
-                  </v-card>
-                </v-col>
-              </v-row>
-            </div>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-main>
+  <div class="px-16">
+    <DividedTitle :title="title" :subtitle="subtitle"></DividedTitle>
+    <v-row align="center" justify="center" class="pt-16">
+      <v-col
+        v-for="member in team"
+        :key="member.id"
+        xs="12"
+        md=""
+        cols="12"
+        class="text-center pa-0 ma-0"
+      >
+        <TeamMemberCard :member="member"></TeamMemberCard>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
 import DividedTitle from '@/components/DividedTitle'
+import TeamMemberCard from '@/components/TeamMemberCard'
 
 export default {
+  layout: 'primary',
   components: {
     DividedTitle,
+    TeamMemberCard,
   },
   data: () => {
     return {
