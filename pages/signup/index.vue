@@ -1,6 +1,9 @@
 <template>
   <div class="px-16">
     <DividedTitle :title="title" :subtitle="subtitle"></DividedTitle>
+    <p class="subtitle-1">
+      Please fill out the form below and we'll be in contact soon!
+    </p>
     <div class="pr-lg-16 mr-lg-16 pt-8">
       <client-only>
         <v-form
@@ -68,7 +71,7 @@ export default {
   data: () => {
     return {
       title: 'Sign up',
-      subtitle: "Please fill out the form below and we'll be in contact soon!",
+      subtitle: 'Want to set up a free demo class?',
       valid: true,
       name: '',
       nameRules: [
