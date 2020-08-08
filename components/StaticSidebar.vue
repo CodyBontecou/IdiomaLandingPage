@@ -1,5 +1,10 @@
 <template>
-  <v-navigation-drawer v-show="$vuetify.breakpoint.mdAndUp" app clipped>
+  <v-navigation-drawer
+    v-show="$vuetify.breakpoint.mdAndUp"
+    app
+    clipped
+    color="background"
+  >
     <v-list dense nav class="pt-10">
       <v-list-item class="pb-5">
         <nuxt-link to="/syllabus" class="list-title-link">

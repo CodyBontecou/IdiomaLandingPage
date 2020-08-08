@@ -80,7 +80,7 @@
           xs="12"
           sm="3"
         >
-          <v-card class="mx-auto" max-width="255" flat>
+          <v-card class="mx-auto" max-width="255" flat color="background">
             <v-card-text>
               <div class="text-h6 font-weight-medium">
                 {{ info.title }}

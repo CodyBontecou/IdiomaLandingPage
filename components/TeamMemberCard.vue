@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="255" flat>
+  <v-card class="mx-auto" max-width="255" flat color="background">
     <v-row align="center" justify="center" class="pa-0 ma-0">
       <v-avatar size="150">
         <v-img :src="member.image"></v-img>
