@@ -57,7 +57,7 @@
               <iframe
                 width="100%"
                 :height="$vuetify.breakpoint.lgAndUp ? '600' : '315'"
-                src="https://www.youtube.com/embed/2YBtspm8j8M"
+                src="https://www.youtube.com/embed/Q3xvmc1gVVE"
                 class="pt-5 px-5"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
