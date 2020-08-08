@@ -28,7 +28,9 @@
                 <v-list-item-icon>
                   <v-icon color="primary">{{ highlight.icon }}</v-icon>
                 </v-list-item-icon>
-                {{ highlight.text }}
+                <span style="font-size: 1.2em; color: rgba(0, 0, 0, 0.6);">
+                  {{ highlight.text }}
+                </span>
               </v-list-item>
             </v-list>
           </v-card-text>
