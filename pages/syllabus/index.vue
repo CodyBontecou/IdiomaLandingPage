@@ -35,7 +35,7 @@ export default {
     return {
       title: 'Method',
       subtitle:
-        'We teach various levels, starting from A1 - C2 as defined by the Common European Framework of Reference for Languages (CEFR). Our classes are interactive,\n' +
+        'We teach various levels, starting from A1 - B2 as defined by the Common European Framework of Reference for Languages (CEFR). Our classes are interactive,\n' +
         '                we have extensive material consisting of presentations,\n' +
         '                exercises, videos, and conversations. We adapt to the rhythm of\n' +
         '                each student and we are attentive to the feedback of the\n' +

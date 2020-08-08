@@ -35,8 +35,6 @@ export default {
         { name: 'Basic - A2', to: '/syllabus/a2/' },
         { name: 'Independent - B1', to: '/syllabus/b1/' },
         { name: 'Independent - B2', to: '/syllabus/b2/' },
-        { name: 'Proficient - C1', to: '/syllabus/c1/' },
-        { name: 'Proficient - C2', to: '/syllabus/c2/' },
       ],
     }
   },

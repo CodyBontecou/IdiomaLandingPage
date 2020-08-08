@@ -40,19 +40,19 @@ export default {
         {
           name: 'Daniela Gonzalez Barron',
           description: '',
-          image: '/daniela.jpg',
+          image: '/daniela.png',
           role: 'Founder',
         },
         {
           name: 'Maribi Garcia',
           description: '',
-          image: '/maribi.jpg',
+          image: '/maribi.png',
           role: 'Founder',
         },
         {
           name: 'Cody Bontecou',
           description: '',
-          image: '/cody.jpeg',
+          image: '/cody.png',
           role: 'Software & Marketing',
         },
       ],
