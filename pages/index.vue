@@ -20,10 +20,10 @@
         >
           <div class="flex-column mb-6">
             <h1 class="font-weight-thin title text-md-h3">
-              The Progressive
+              Spanish Language
             </h1>
             <h1 class="font-weight-thin ml-2 title text-md-h4">
-              Language Learning Program
+              Learning Program
             </h1>
           </div>
           <v-dialog
