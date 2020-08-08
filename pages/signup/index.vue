@@ -1,7 +1,7 @@
 <template>
   <div class="px-16">
     <DividedTitle :title="title" :subtitle="subtitle"></DividedTitle>
-    <div class="pr-lg-16 mr-lg-16 pt-16 mt-lg-16">
+    <div class="pr-lg-16 mr-lg-16 pt-8">
       <client-only>
         <v-form
           ref="form"
