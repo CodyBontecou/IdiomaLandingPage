@@ -28,6 +28,36 @@
       </v-list-item>
       <v-list-item>
         <v-list-item-icon>
+          <v-icon color="primary">mdi-account-group</v-icon>
+        </v-list-item-icon>
+        <v-menu offset-y open-on-hover close-delay="200">
+          <template v-slot:activator="{ on, attrs }">
+            <v-list-item-content>
+              <v-list-item-title
+                class="text-capitalize subtitle-1"
+                v-bind="attrs"
+                v-on="on"
+              >
+                Team
+              </v-list-item-title>
+            </v-list-item-content>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in team"
+              :key="index"
+              :to="item.to"
+            >
+              <v-list-item-title>{{ item.name }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+        <v-list-item-icon>
+          <v-icon color="primary">mdi-menu-down</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-list-item>
+        <v-list-item-icon>
           <v-icon color="primary">mdi-forum</v-icon>
         </v-list-item-icon>
         <v-menu offset-y open-on-hover close-delay="200">
@@ -69,7 +99,6 @@ export default {
       navOptions: [
         { text: 'home', icon: 'mdi-home', to: '/' },
         { text: 'sign up', icon: 'mdi-play-circle', to: '/signup/' },
-        { text: 'team', icon: 'mdi-account-group', to: '/team/' },
         { text: 'price', icon: 'mdi-reminder', to: '/price/' },
       ],
       syllabus: [
@@ -78,6 +107,11 @@ export default {
         { name: 'Basic - A2', to: '/syllabus/a2/' },
         { name: 'Independent - B1', to: '/syllabus/b1/' },
         { name: 'Independent - B2', to: '/syllabus/b2/' },
+      ],
+      team: [
+        { name: 'Information', to: '/team/' },
+        { name: 'Daniela Gonzalez', to: '/team/daniela-gonzalez/' },
+        { name: 'Maribi Garcia', to: '/team/maribi-garcia/' },
       ],
     }
   },
