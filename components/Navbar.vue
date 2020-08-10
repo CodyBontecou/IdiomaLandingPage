@@ -25,7 +25,7 @@
     <v-menu offset-y open-on-hover>
       <template v-slot:activator="{ on, attrs }">
         <v-btn
-          v-show="$vuetify.breakpoint.lgAndUp"
+          v-show="$vuetify.breakpoint.mdAndUp"
           text
           class="text-capitalize subtitle-1"
           v-bind="attrs"
@@ -45,7 +45,7 @@
     <v-menu offset-y open-on-hover>
       <template v-slot:activator="{ on, attrs }">
         <v-btn
-          v-show="$vuetify.breakpoint.lgAndUp"
+          v-show="$vuetify.breakpoint.mdAndUp"
           text
           class="text-capitalize subtitle-1"
           v-bind="attrs"
