@@ -13,7 +13,7 @@
 
     <v-btn
       v-for="item in navOptions"
-      v-show="$vuetify.breakpoint.lgAndUp"
+      v-show="$vuetify.breakpoint.mdAndUp"
       :key="item.id"
       :to="item.to"
       text
