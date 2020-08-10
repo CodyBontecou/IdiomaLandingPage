@@ -27,19 +27,17 @@ import StaticSidebar from '@/components/StaticSidebar'
 
 export default {
   components: {
-    StaticSidebar,
     Navbar,
     Sidebar,
+    StaticSidebar,
   },
   data: () => {
     return {
       navigation: {
-        name: 'syllabus',
+        name: 'team',
         navigation: [
-          { name: 'Basic - A1', to: '/syllabus/a1/' },
-          { name: 'Basic - A2', to: '/syllabus/a2/' },
-          { name: 'Independent - B1', to: '/syllabus/b1/' },
-          { name: 'Independent - B2', to: '/syllabus/b2/' },
+          { name: 'Daniela Gonzalez', to: '/team/daniela-gonzalez/' },
+          { name: 'Maribi Garcia', to: '/team/maribi-garcia/' },
         ],
       },
     }
@@ -52,4 +50,4 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style></style>

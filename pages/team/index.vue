@@ -21,7 +21,7 @@ import DividedTitle from '@/components/DividedTitle'
 import TeamMemberCard from '@/components/TeamMemberCard'
 
 export default {
-  layout: 'primary',
+  layout: 'team',
   components: {
     DividedTitle,
     TeamMemberCard,
@@ -38,22 +38,25 @@ export default {
         '              language.',
       team: [
         {
-          name: 'Daniela Gonzalez Barron',
+          name: 'Daniela Gonzalez',
           description: '',
           image: '/daniela.png',
           role: 'Founder',
+          slug: '/team/daniela-gonzalez/',
         },
         {
           name: 'Maribi Garcia',
           description: '',
           image: '/maribi.png',
           role: 'Founder',
+          slug: '/team/maribi-garcia/',
         },
         {
           name: 'Cody Bontecou',
           description: '',
           image: '/cody.png',
           role: 'Software & Marketing',
+          slug: '/team/',
         },
       ],
     }
