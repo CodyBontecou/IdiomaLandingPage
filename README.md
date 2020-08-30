@@ -1,6 +1,6 @@
-# frontend
+# Hello Idioma
 
-A basic demo can be seen at [spanish.netlify.app](https://spanish.netlify.app).
+A basic demo can be seen at [https://helloidioma.com](https://helloidioma.com).
 
 ## Build Setup
 

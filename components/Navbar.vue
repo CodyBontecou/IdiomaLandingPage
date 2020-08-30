@@ -15,8 +15,9 @@
       v-for="item in navOptions"
       v-show="$vuetify.breakpoint.mdAndUp"
       :key="item.id"
-      :to="item.to"
+      :to="localePath(item.localePath)"
       text
+      exact
       class="text-capitalize underlined_button subtitle-1"
     >
       <span class="text--black">{{ item.text }}</span>
@@ -31,12 +32,17 @@
           v-bind="attrs"
           v-on="on"
         >
-          <span class="text--black">Team</span>
+          <span class="text--black">{{ team.title }}</span>
           <v-icon class="grey--text">mdi-menu-down</v-icon>
         </v-btn>
       </template>
       <v-list>
-        <v-list-item v-for="(item, index) in team" :key="index" :to="item.to">
+        <v-list-item
+          v-for="(item, index) in team.nav"
+          :key="index"
+          :to="item.localePath"
+          exact
+        >
           <v-list-item-title>{{ item.name }}</v-list-item-title>
         </v-list-item>
       </v-list>
@@ -47,19 +53,21 @@
         <v-btn
           v-show="$vuetify.breakpoint.mdAndUp"
           text
+          exact
           class="text-capitalize subtitle-1"
           v-bind="attrs"
           v-on="on"
         >
-          <span class="text--black">Syllabus</span>
+          <span class="text--black">{{ syllabusNav.title }}</span>
           <v-icon class="grey--text">mdi-menu-down</v-icon>
         </v-btn>
       </template>
       <v-list>
         <v-list-item
-          v-for="(item, index) in syllabus"
+          v-for="(item, index) in syllabusNav.nav"
           :key="index"
-          :to="item.to"
+          :to="item.localePath"
+          exact
         >
           <v-list-item-title>{{ item.name }}</v-list-item-title>
         </v-list-item>
@@ -71,28 +79,16 @@
 <script>
 export default {
   name: 'Navbar',
-  data: () => {
-    return {
-      navOptions: [
-        { text: 'home', icon: 'mdi-home', to: '/' },
-        { text: 'sign up', icon: 'mdi-play-circle', to: '/signup/' },
-        { text: 'price', icon: 'mdi-reminder', to: '/price/' },
-      ],
-      syllabus: [
-        { name: 'Information', to: '/syllabus/' },
-        { name: 'Basic - A1', to: '/syllabus/a1/' },
-        { name: 'Basic - A2', to: '/syllabus/a2/' },
-        { name: 'Independent - B1', to: '/syllabus/b1/' },
-        { name: 'Independent - B2', to: '/syllabus/b2/' },
-      ],
-      team: [
-        { name: 'Information', to: '/team/' },
-        { name: 'Daniela Gonzalez', to: '/team/daniela-gonzalez/' },
-        { name: 'Maribi Garcia', to: '/team/maribi-garcia/' },
-      ],
-    }
-  },
   computed: {
+    navOptions() {
+      return this.$t('nav.navOptions')
+    },
+    syllabusNav() {
+      return this.$t('nav.syllabus')
+    },
+    team() {
+      return this.$t('nav.team')
+    },
     drawer: {
       get() {
         return this.$store.state.drawer

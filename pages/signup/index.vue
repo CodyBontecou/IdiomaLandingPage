@@ -1,8 +1,11 @@
 <template>
   <div class="px-16">
-    <DividedTitle :title="title" :subtitle="subtitle"></DividedTitle>
+    <DividedTitle
+      :title="signup.title"
+      :subtitle="signup.subtitle"
+    ></DividedTitle>
     <p class="subtitle-1">
-      Please fill out the form below and we'll be in contact soon!
+      {{ signup['subtitle-1'] }}
     </p>
     <div class="pr-lg-16 mr-lg-16 pt-8">
       <client-only>
@@ -12,15 +15,14 @@
           name="contact"
           method="POST"
           data-netlify="true"
-          lazy-validation
-          action="/signup/success/"
+          :action="signup.localePath"
         >
           <input type="hidden" name="form-name" value="contact" />
           <v-text-field
             v-model="name"
             :rules="nameRules"
-            label="Name"
-            name="name"
+            :label="signup.nameForm.label"
+            :name="signup.nameForm.name"
             required
             solo
           ></v-text-field>
@@ -28,8 +30,8 @@
           <v-text-field
             v-model="email"
             :rules="emailRules"
-            label="E-mail"
-            name="email"
+            :label="signup.emailForm.label"
+            :name="signup.emailForm.name"
             required
             solo
           ></v-text-field>
@@ -38,9 +40,9 @@
             v-model="message"
             :rules="messageRules"
             :counter="300"
+            :label="signup.messageForm.label"
+            :name="signup.messageForm.name"
             solo
-            name="message"
-            label="Tell us about yourself"
           ></v-textarea>
 
           <v-col class="text-right">
@@ -51,7 +53,7 @@
               type="submit"
               @submit.prevent="handleSubmit"
             >
-              Send
+              {{ signup.submitButton }}
             </v-btn>
           </v-col>
         </v-form>
@@ -70,8 +72,6 @@ export default {
   },
   data: () => {
     return {
-      title: 'Sign up',
-      subtitle: 'Want to set up a free demo class?',
       valid: true,
       name: '',
       nameRules: [
@@ -94,12 +94,45 @@ export default {
       ],
     }
   },
+  computed: {
+    signup() {
+      return this.$t('signup')
+    },
+  },
   methods: {
     handleSubmit() {
       if (this.$refs.form.validate()) {
         this.$refs.form.submit()
       }
     },
+  },
+  head() {
+    const i18nSeo = this.$nuxtI18nSeo()
+    const that = this
+    return {
+      title: that.signup.meta.title,
+      htmlAttrs: {
+        ...i18nSeo.htmlAttrs,
+      },
+      meta: [
+        {
+          hid: 'description',
+          property: 'og:description',
+          name: 'description',
+          content: that.signup.meta.description,
+        },
+        ...i18nSeo.meta,
+      ],
+      link: [
+        {
+          hid: 'apple-touch-icon',
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/logo_no_words.png',
+        },
+        ...i18nSeo.link,
+      ],
+    }
   },
 }
 </script>

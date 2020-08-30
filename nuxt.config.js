@@ -14,14 +14,14 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: 'Hello Idioma',
+    title: 'Learn, Speak, and Connect in a new language | Hello Idioma',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: 'Spanish Learning',
+        content: 'Lorem Ipsum Descriptsum',
       },
     ],
     link: [
@@ -31,6 +31,9 @@ export default {
         href: 'logo_no_words.png',
       },
     ],
+  },
+  generate: {
+    routes: ['/syllabus/a1', '/syllabus/a2', '/syllabus/b1', '/syllabus/b2'],
   },
   /*
    ** Global CSS
@@ -69,10 +72,72 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
     '@nuxtjs/sitemap',
+    'nuxt-i18n',
   ],
 
+  // TODO: Generate proper sitemap for dynamic routes.
   sitemap: {
     hostname: 'https://helloidioma.com',
+  },
+
+  i18n: {
+    baseUrl: 'https://helloidioma.com',
+    lazy: true,
+    seo: false,
+    detectBrowserLanguage: {
+      useCookie: true,
+    },
+    langDir: 'lang/',
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        iso: 'en-US',
+        file: 'en-US.js',
+        flag:
+          'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg',
+      },
+      {
+        code: 'es',
+        name: 'Español',
+        iso: 'es-ES',
+        file: 'es-ES.js',
+        flag:
+          'https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg',
+      },
+    ],
+    defaultLocale: 'en',
+    parsePages: false,
+    pages: {
+      'signup/index': {
+        en: '/signup', // -> accessible at /signup (no prefix since it's the default locale)
+        es: '/registrar', // -> accessible at /es/registrar
+      },
+      'signup/success': {
+        en: '/signup/success',
+        es: '/registrar/success',
+      },
+      'price/index': {
+        en: '/price',
+        es: '/precio',
+      },
+      'syllabus/index': {
+        en: '/syllabus',
+        es: '/silaba',
+      },
+      'syllabus/_id': {
+        en: '/syllabus/:id',
+        es: '/silaba/:id',
+      },
+      'team/index': {
+        en: '/team',
+        es: '/equipo',
+      },
+      'team/_id': {
+        en: '/team/:id',
+        es: '/equipo/:id',
+      },
+    },
   },
   /*
    ** Axios module configuration

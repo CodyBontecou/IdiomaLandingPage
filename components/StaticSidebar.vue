@@ -9,17 +9,18 @@
       <v-list-item class="pb-5">
         <nuxt-link :to="'/' + navigation.name" class="list-title-link">
           <span class="text-h6 font-weight-bold text-capitalize">
-            {{ navigation.name }}
+            {{ navigation.title }}
           </span>
         </nuxt-link>
       </v-list-item>
 
       <v-list-item
-        v-for="item in navigation.navigation"
+        v-for="item in navigation.nav"
         :key="item.id"
-        :to="item.to"
+        :to="item.localePath"
         dense
         nuxt
+        exact
         color="primary"
       >
         <v-list-item-content>

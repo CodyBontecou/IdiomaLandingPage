@@ -20,10 +20,10 @@
         >
           <div class="flex-column mb-6">
             <h1 class="font-weight-thin title text-md-h3">
-              Spanish Language
+              {{ $t('landingPage.title') }}
             </h1>
             <h1 class="font-weight-thin ml-2 title text-md-h4">
-              Learning Program
+              {{ $t('landingPage.subtitle') }}
             </h1>
           </div>
           <v-dialog
@@ -40,16 +40,21 @@
                   v-on="on"
                 >
                   <v-icon class="pr-2">mdi-play-circle</v-icon>
-                  <span class="font-weight-medium">Why us?</span>
+                  <span class="font-weight-medium">
+                    {{ $t('landingPage.whyUs') }}
+                  </span>
                 </v-btn>
                 <v-btn
                   rounded
                   v-bind="size"
                   outlined
                   color="primary"
-                  to="/signup/"
+                  nuxt
+                  :to="localePath('signup')"
                 >
-                  <span class="font-weight-medium">Get Started</span>
+                  <span class="font-weight-medium">
+                    {{ $t('getStarted') }}
+                  </span>
                 </v-btn>
               </div>
             </template>
@@ -65,7 +70,9 @@
               ></iframe>
               <v-toolbar bottom flat>
                 <v-spacer></v-spacer>
-                <v-btn color="primary" to="/signup/">Get Started</v-btn>
+                <v-btn color="primary" :to="localePath('signup')">
+                  {{ $t('getStarted') }}
+                </v-btn>
               </v-toolbar>
             </v-card>
           </v-dialog>
@@ -73,8 +80,8 @@
       </v-row>
       <v-row align="center" justify="center" no-gutters>
         <v-col
-          v-for="info in highlights"
-          :key="info.id"
+          v-for="highlight in highlights"
+          :key="highlight.id"
           class="text-center"
           cols="12"
           xs="12"
@@ -82,10 +89,10 @@
         >
           <v-card class="mx-auto" max-width="255" flat color="background">
             <v-card-text>
-              <div class="text-h6 font-weight-medium">
-                {{ info.title }}
+              <div class="text-h6 font-weight-medium text-capitalize">
+                {{ highlight.title }}
               </div>
-              <div class="font-weight-thin">{{ info.description }}</div>
+              <div class="font-weight-thin">{{ highlight.content }}</div>
             </v-card-text>
           </v-card>
         </v-col>
@@ -100,26 +107,12 @@ export default {
     return {
       dialog: false,
       logo: '~/assets/logo.png',
-      highlights: [
-        {
-          title: 'Learn',
-          description:
-            "With Spanish being the fourth most spoken language on our planet, it's an excellent time to begin your journey in being able to communicate with some of the most beautiful cultures of the world!",
-        },
-        {
-          title: 'Speak',
-          description:
-            "We designed our classes to get you speaking. From day one, we'll have you working on pronunciation, conjugations, and more to get you confident in having conversations alongside native speakers.",
-        },
-        {
-          title: 'Connect',
-          description:
-            'Hello Idioma is designed to expose and teach you from our diverse team of professionals. We are flexible in our classroom sizes, adapting to what works best for you.',
-        },
-      ],
     }
   },
   computed: {
+    highlights() {
+      return this.$t('landingPage.highlights')
+    },
     size() {
       const size = {
         xs: 'sm',
@@ -130,6 +123,35 @@ export default {
       }[this.$vuetify.breakpoint.name]
       return size ? { [size]: true } : {}
     },
+  },
+  head() {
+    const i18nSeo = this.$nuxtI18nSeo()
+    const that = this
+    return {
+      title: that.$t('landingPage.meta.title'),
+      htmlAttrs: {
+        myAttribute: 'My Value',
+        ...i18nSeo.htmlAttrs,
+      },
+      meta: [
+        {
+          hid: 'description',
+          property: 'og:description',
+          name: 'description',
+          content: that.$t('landingPage.meta.description'),
+        },
+        ...i18nSeo.meta,
+      ],
+      link: [
+        {
+          hid: 'apple-touch-icon',
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/logo_no_words.png',
+        },
+        ...i18nSeo.link,
+      ],
+    }
   },
 }
 </script>

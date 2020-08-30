@@ -16,7 +16,13 @@
     </v-list-item>
 
     <v-list dense nav>
-      <v-list-item v-for="item in navOptions" :key="item.id" link :to="item.to">
+      <!--  navOptions list items -->
+      <v-list-item
+        v-for="item in navOptions"
+        :key="item.id"
+        link
+        :to="localePath(item.localePath)"
+      >
         <v-list-item-icon>
           <v-icon color="primary">{{ item.icon }}</v-icon>
         </v-list-item-icon>
@@ -26,6 +32,8 @@
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
+
+      <!--  Team dropdown -->
       <v-list-item>
         <v-list-item-icon>
           <v-icon color="primary">mdi-account-group</v-icon>
@@ -38,13 +46,13 @@
                 v-bind="attrs"
                 v-on="on"
               >
-                Team
+                {{ team.title }}
               </v-list-item-title>
             </v-list-item-content>
           </template>
           <v-list>
             <v-list-item
-              v-for="(item, index) in team"
+              v-for="(item, index) in team.nav"
               :key="index"
               :to="item.to"
             >
@@ -56,6 +64,8 @@
           <v-icon color="primary">mdi-menu-down</v-icon>
         </v-list-item-icon>
       </v-list-item>
+
+      <!--  Syllabus dropdown -->
       <v-list-item>
         <v-list-item-icon>
           <v-icon color="primary">mdi-forum</v-icon>
@@ -68,15 +78,15 @@
                 v-bind="attrs"
                 v-on="on"
               >
-                Syllabus
+                {{ syllabusNav.title }}
               </v-list-item-title>
             </v-list-item-content>
           </template>
           <v-list>
             <v-list-item
-              v-for="(item, index) in syllabus"
+              v-for="(item, index) in syllabusNav.nav"
               :key="index"
-              :to="item.to"
+              :to="item.localePath"
             >
               <v-list-item-title>{{ item.name }}</v-list-item-title>
             </v-list-item>
@@ -92,30 +102,19 @@
 
 <script>
 export default {
-  name: 'Sidebar',
-  data: () => {
-    return {
-      brand: { name: 'Hello Idioma' },
-      navOptions: [
-        { text: 'home', icon: 'mdi-home', to: '/' },
-        { text: 'sign up', icon: 'mdi-play-circle', to: '/signup/' },
-        { text: 'price', icon: 'mdi-reminder', to: '/price/' },
-      ],
-      syllabus: [
-        { name: 'Information', to: '/syllabus/' },
-        { name: 'Basic - A1', to: '/syllabus/a1/' },
-        { name: 'Basic - A2', to: '/syllabus/a2/' },
-        { name: 'Independent - B1', to: '/syllabus/b1/' },
-        { name: 'Independent - B2', to: '/syllabus/b2/' },
-      ],
-      team: [
-        { name: 'Information', to: '/team/' },
-        { name: 'Daniela Gonzalez', to: '/team/daniela-gonzalez/' },
-        { name: 'Maribi Garcia', to: '/team/maribi-garcia/' },
-      ],
-    }
-  },
   computed: {
+    brand() {
+      return this.$t('brand')
+    },
+    navOptions() {
+      return this.$t('nav.navOptions')
+    },
+    syllabusNav() {
+      return this.$t('nav.syllabus')
+    },
+    team() {
+      return this.$t('nav.team')
+    },
     drawer: {
       get() {
         return this.$store.state.drawer

@@ -1,6 +1,9 @@
 <template>
   <div class="px-16">
-    <DividedTitle :title="title" :subtitle="subtitle"></DividedTitle>
+    <DividedTitle
+      :title="signupSuccess.title"
+      :subtitle="signupSuccess.subtitle"
+    ></DividedTitle>
   </div>
 </template>
 
@@ -8,16 +11,41 @@
 import DividedTitle from '@/components/DividedTitle'
 
 export default {
-  name: 'Success',
   layout: 'primary',
   components: {
     DividedTitle,
   },
-  data: () => {
+  computed: {
+    signupSuccess() {
+      return this.$t('signupSuccess')
+    },
+  },
+  head() {
+    const i18nSeo = this.$nuxtI18nSeo()
+    const that = this
     return {
-      title: 'Success',
-      subtitle:
-        'Thank you for taking an interest in Hello Idioma! We have successfully received your email, and will get back to you shortly.',
+      title: that.signupSuccess.meta.title,
+      htmlAttrs: {
+        ...i18nSeo.htmlAttrs,
+      },
+      meta: [
+        {
+          hid: 'description',
+          property: 'og:description',
+          name: 'description',
+          content: that.signupSuccess.meta.description,
+        },
+        ...i18nSeo.meta,
+      ],
+      link: [
+        {
+          hid: 'apple-touch-icon',
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/logo_no_words.png',
+        },
+        ...i18nSeo.link,
+      ],
     }
   },
 }

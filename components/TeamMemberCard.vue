@@ -4,7 +4,7 @@
     max-width="255"
     flat
     color="background"
-    :to="member.slug"
+    :to="member.localePath"
   >
     <v-row align="center" justify="center" class="pa-0 ma-0">
       <v-avatar size="150">
@@ -14,7 +14,7 @@
     <v-row align="center" justify="center">
       <v-card-text class="font-weight-thin">
         <h3 class="text-h5 font-weight-bold">
-          {{ member.name }}
+          {{ member.title }}
         </h3>
         <h3 class="text-h6 font-weight-bold primary--text">
           {{ member.role }}

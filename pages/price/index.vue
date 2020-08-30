@@ -1,9 +1,12 @@
 <template>
   <div class="px-16">
-    <DividedTitle :title="title" :subtitle="subtitle"></DividedTitle>
+    <DividedTitle
+      :title="price.title"
+      :subtitle="price.subtitle"
+    ></DividedTitle>
     <v-row align="center" justify="center" class="pb-16">
       <v-col
-        v-for="c in classes"
+        v-for="c in price.classes"
         :key="c.id"
         xs="12"
         md=""
@@ -36,7 +39,13 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn rounded v-bind="size" color="primary" text to="/signup/">
+            <v-btn
+              rounded
+              v-bind="size"
+              color="primary"
+              text
+              :to="localePath('signup')"
+            >
               <span class="font-weight-medium">Get Started</span>
             </v-btn>
           </v-card-actions>
@@ -44,12 +53,14 @@
       </v-col>
     </v-row>
     <DividedTitle
-      :title="discountsTitle"
-      :subtitle="discountsSubtitle"
+      :title="price.discountsTitle"
+      :subtitle="price.discountsSubtitle"
     ></DividedTitle>
     <v-data-table
-      :headers="headers"
-      :items="discounts"
+      :headers="price.headers"
+      :items="price.discounts"
+      disable-filtering
+      disable-pagination
       class="elevation-1 mt-16"
     ></v-data-table>
   </div>
@@ -63,85 +74,10 @@ export default {
   components: {
     DividedTitle,
   },
-  data: () => {
-    return {
-      title: 'Simple, flexible pricing.',
-      subtitle: '',
-      discountsTitle: 'Discounts',
-      discountsSubtitle:
-        'A discount will be applied to your total invoice if you pay for at least 4 classes in advanced.',
-      classes: [
-        {
-          type: 'Private class',
-          price: '10',
-          highlights: [
-            {
-              icon: 'mdi-notebook',
-              text: 'One on one classes.',
-            },
-            {
-              icon: 'mdi-star-circle',
-              text: 'Specialized for you.',
-            },
-            {
-              icon: 'mdi-arrow-down-circle',
-              text: 'At your own rhythm.',
-            },
-          ],
-        },
-        {
-          type: 'Group classes',
-          price: '6',
-          highlights: [
-            {
-              icon: 'mdi-notebook',
-              text: '2 - 4 students.',
-            },
-            {
-              icon: 'mdi-star-circle',
-              text: 'Learn in a group environment.',
-            },
-            {
-              icon: 'mdi-arrow-down-circle',
-              text: 'Converse and connect with one another.',
-            },
-          ],
-        },
-      ],
-      headers: [
-        {
-          text: '# of classes',
-          align: 'start',
-          sortable: false,
-          value: 'numClasses',
-        },
-        { text: 'Normal Price', value: 'normalPrice' },
-        { text: 'Discount', value: 'discount' },
-        { text: 'New Price', value: 'newPrice' },
-      ],
-      discounts: [
-        {
-          numClasses: '16 classes or more',
-          normalPrice: '$160',
-          discount: '20%',
-          newPrice: '$128',
-        },
-        {
-          numClasses: '8 classes or more',
-          normalPrice: '$80',
-          discount: '15%',
-          newPrice: '$68',
-        },
-        {
-          numClasses: '4 classes or more',
-          normalPrice: '$40',
-          discount: '10%',
-          newPrice: '$36',
-        },
-      ],
-    }
-  },
   computed: {
+    price() {
+      return this.$t('price')
+    },
     size() {
       const size = {
         xs: 'sm',
@@ -152,6 +88,34 @@ export default {
       }[this.$vuetify.breakpoint.name]
       return size ? { [size]: true } : {}
     },
+  },
+  head() {
+    const i18nSeo = this.$nuxtI18nSeo()
+    const that = this
+    return {
+      title: that.price.meta.title,
+      htmlAttrs: {
+        ...i18nSeo.htmlAttrs,
+      },
+      meta: [
+        {
+          hid: 'description',
+          property: 'og:description',
+          name: 'description',
+          content: that.price.meta.description,
+        },
+        ...i18nSeo.meta,
+      ],
+      link: [
+        {
+          hid: 'apple-touch-icon',
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/logo_no_words.png',
+        },
+        ...i18nSeo.link,
+      ],
+    }
   },
 }
 </script>

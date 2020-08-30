@@ -1,9 +1,9 @@
 <template>
   <div class="px-16">
-    <DividedTitle :title="title" :subtitle="subtitle"></DividedTitle>
+    <DividedTitle :title="team.title" :subtitle="team.subtitle"></DividedTitle>
     <v-row align="center" justify="center" class="pt-16">
       <v-col
-        v-for="member in team"
+        v-for="member in team.teamMembers"
         :key="member.id"
         xs="12"
         md=""
@@ -21,43 +21,47 @@ import DividedTitle from '@/components/DividedTitle'
 import TeamMemberCard from '@/components/TeamMemberCard'
 
 export default {
-  layout: 'team',
+  layout: 'sidebar',
   components: {
     DividedTitle,
     TeamMemberCard,
   },
-  data: () => {
+  computed: {
+    team() {
+      return this.$t('team')
+    },
+    teamNav() {
+      return this.$t('nav.team')
+    },
+  },
+  mounted() {
+    this.$store.commit('setNavigation', this.teamNav)
+  },
+  head() {
+    const i18nSeo = this.$nuxtI18nSeo()
+    const that = this
     return {
-      title: 'Who we are',
-      'title-2': "A language learning team that's different from the rest",
-      subtitle:
-        'We are a couple of entrepreneurs, intelligent, and studious people,\n' +
-        '              who seek to teach our language in a more colloquial and friendly\n' +
-        '              way, following the correct grammatical structure and providing a\n' +
-        '              broad and vast vocabulary for a full understanding of the\n' +
-        '              language.',
-      team: [
+      title: that.team.meta.title,
+      htmlAttrs: {
+        ...i18nSeo.htmlAttrs,
+      },
+      meta: [
         {
-          name: 'Daniela Gonzalez',
-          description: '',
-          image: '/daniela.png',
-          role: 'Founder',
-          slug: '/team/daniela-gonzalez/',
+          hid: 'description',
+          property: 'og:description',
+          name: 'description',
+          content: that.team.meta.description,
         },
+        ...i18nSeo.meta,
+      ],
+      link: [
         {
-          name: 'Maribi Garcia',
-          description: '',
-          image: '/maribi.png',
-          role: 'Founder',
-          slug: '/team/maribi-garcia/',
+          hid: 'apple-touch-icon',
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/logo_no_words.png',
         },
-        {
-          name: 'Cody Bontecou',
-          description: '',
-          image: '/cody.png',
-          role: 'Software & Marketing',
-          slug: '/team/',
-        },
+        ...i18nSeo.link,
       ],
     }
   },

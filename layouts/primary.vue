@@ -16,6 +16,7 @@
         </v-row>
       </v-container>
     </v-main>
+    <LocaleChanger />
   </v-app>
 </template>
 

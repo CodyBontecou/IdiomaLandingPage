@@ -17,10 +17,12 @@
         </v-row>
       </v-container>
     </v-main>
+    <LocaleChanger />
   </v-app>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 import StaticSidebar from '@/components/StaticSidebar'
@@ -31,23 +33,11 @@ export default {
     Sidebar,
     StaticSidebar,
   },
-  data: () => {
-    return {
-      navigation: {
-        name: 'team',
-        navigation: [
-          { name: 'Daniela Gonzalez', to: '/team/daniela-gonzalez/' },
-          { name: 'Maribi Garcia', to: '/team/maribi-garcia/' },
-        ],
-      },
-    }
-  },
   computed: {
+    ...mapGetters(['navigation']),
     theme() {
       return this.$vuetify.theme.dark ? 'dark' : 'light'
     },
   },
 }
 </script>
-
-<style></style>

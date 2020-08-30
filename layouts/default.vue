@@ -6,6 +6,7 @@
     <Navbar></Navbar>
     <Sidebar></Sidebar>
     <Nuxt />
+    <LocaleChanger />
   </v-app>
 </template>
 

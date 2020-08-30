@@ -25,7 +25,7 @@ export default {
   name: 'Examples',
   props: {
     data: {
-      type: [String],
+      type: [Array],
       required: true,
     },
   },

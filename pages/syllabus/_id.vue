@@ -1,55 +1,26 @@
 <template>
   <div class="px-16">
     <DividedTitle
-      :title="syllabus.title"
-      :subtitle="syllabus.subtitle"
+      :title="level.title"
+      :subtitle="level.subtitle"
     ></DividedTitle>
-
-    <h3 class="text-h6 font-weight-bold pt-16 pb-5 justify-end">
-      {{ syllabus.secondaryTitle }}
-    </h3>
-
-    <v-divider></v-divider>
-
-    <p class="subtitle-1 pt-5">
-      {{ syllabus.secondarySubtitle }}
-    </p>
-
-    <div class="text-left pt-16">
-      <v-btn
-        rounded
-        v-bind="size"
-        color="primary"
-        class="mr-2"
-        :to="localePath('signup')"
-      >
-        <span class="font-weight-medium">{{ $t('getStarted') }}</span>
-      </v-btn>
-    </div>
+    <Examples :data="level.examples"></Examples>
   </div>
 </template>
 
 <script>
 import DividedTitle from '@/components/DividedTitle'
+import Examples from '@/components/Examples'
 
 export default {
   layout: 'sidebar',
   components: {
     DividedTitle,
+    Examples,
   },
   computed: {
-    size() {
-      const size = {
-        xs: 'sm',
-        sm: 'sm',
-        md: 'medium',
-        lg: 'large',
-        xl: 'x-large',
-      }[this.$vuetify.breakpoint.name]
-      return size ? { [size]: true } : {}
-    },
-    syllabus() {
-      return this.$t('syllabus')
+    level() {
+      return this.$t('syllabusId.levels')[this.$route.params.id]
     },
     syllabusNav() {
       return this.$t('nav.syllabus')
@@ -62,7 +33,7 @@ export default {
     const i18nSeo = this.$nuxtI18nSeo()
     const that = this
     return {
-      title: that.syllabus.meta.title,
+      title: that.level.meta.title,
       htmlAttrs: {
         ...i18nSeo.htmlAttrs,
       },
@@ -71,7 +42,7 @@ export default {
           hid: 'description',
           property: 'og:description',
           name: 'description',
-          content: that.syllabus.meta.description,
+          content: that.level.meta.description,
         },
         ...i18nSeo.meta,
       ],
@@ -88,3 +59,5 @@ export default {
   },
 }
 </script>
+
+<style scoped></style>
