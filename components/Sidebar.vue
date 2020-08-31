@@ -54,7 +54,7 @@
             <v-list-item
               v-for="(item, index) in team.nav"
               :key="index"
-              :to="item.to"
+              :to="localePath(item.localePath)"
             >
               <v-list-item-title>{{ item.name }}</v-list-item-title>
             </v-list-item>
@@ -86,7 +86,7 @@
             <v-list-item
               v-for="(item, index) in syllabusNav.nav"
               :key="index"
-              :to="item.localePath"
+              :to="localePath(item.localePath)"
             >
               <v-list-item-title>{{ item.name }}</v-list-item-title>
             </v-list-item>

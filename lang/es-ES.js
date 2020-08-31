@@ -44,40 +44,40 @@ export default {
     syllabus: {
       title: 'syllabus',
       nav: [
-        { name: 'Information', localePath: { name: 'syllabus___en' } },
+        { name: 'Information', localePath: { name: 'syllabus' } },
         {
           name: 'Basic - A1',
-          localePath: { name: 'syllabus-id___en', params: { id: 'a1' } },
+          localePath: { name: 'syllabus-id', params: { id: 'a1' } },
         },
         {
           name: 'Basic - A2',
-          localePath: { name: 'syllabus-id___en', params: { id: 'a2' } },
+          localePath: { name: 'syllabus-id', params: { id: 'a2' } },
         },
         {
           name: 'Independent - B1',
-          localePath: { name: 'syllabus-id___en', params: { id: 'b1' } },
+          localePath: { name: 'syllabus-id', params: { id: 'b1' } },
         },
         {
           name: 'Independent - B2',
-          localePath: { name: 'syllabus-id___en', params: { id: 'b2' } },
+          localePath: { name: 'syllabus-id', params: { id: 'b2' } },
         },
       ],
     },
     team: {
       title: 'team',
       nav: [
-        { name: 'Information', localePath: { name: 'team___en' } },
+        { name: 'Information', localePath: { name: 'team' } },
         {
           name: 'Daniela Gonzalez',
           localePath: {
-            name: 'team-id___en',
+            name: 'team-id',
             params: { id: 'daniela-gonzalez' },
           },
         },
         {
           name: 'Maribi Garcia',
           localePath: {
-            name: 'team-id___en',
+            name: 'team-id',
             params: { id: 'maribi-garcia' },
           },
         },
@@ -398,7 +398,7 @@ export default {
         image: '/daniela.jpg',
         slug: 'daniela-gonzalez',
         localePath: {
-          name: 'team-id___en',
+          name: 'team-id',
           params: { id: 'daniela-gonzalez' },
         },
         characteristics: {
@@ -433,7 +433,7 @@ export default {
         image: '/maribi.jpg',
         slug: 'maribi-garcia',
         localePath: {
-          name: 'team-id___en',
+          name: 'team-id',
           params: { id: 'maribi-garcia' },
         },
         characteristics: {
