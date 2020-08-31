@@ -1,5 +1,5 @@
 <template>
-  <v-footer absolute class="text-right">
+  <v-footer absolute class="text-right" color="transparent">
     <v-spacer />
     <v-btn
       v-for="locale in availableLocales"
