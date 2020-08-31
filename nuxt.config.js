@@ -76,6 +76,12 @@ export default {
   sitemap: {
     hostname: 'https://helloidioma.com',
     i18n: true,
+    routes: [
+      '/team/daniela-gonzalez',
+      '/equipo/daniela-gonzalez',
+      '/team/maribi-garcia',
+      '/equipo/maribi-garcia',
+    ],
   },
 
   i18n: {
