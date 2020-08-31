@@ -32,9 +32,9 @@ export default {
       },
     ],
   },
-  generate: {
-    routes: ['/syllabus/a1', '/syllabus/a2', '/syllabus/b1', '/syllabus/b2'],
-  },
+  // generate: {
+  //   routes: ['/syllabus/a1', '/syllabus/a2', '/syllabus/b1', '/syllabus/b2'],
+  // },
   /*
    ** Global CSS
    */
