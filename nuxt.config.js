@@ -75,6 +75,7 @@ export default {
   // TODO: Generate proper sitemap for dynamic routes.
   sitemap: {
     hostname: 'https://helloidioma.com',
+    i18n: true,
   },
 
   i18n: {
