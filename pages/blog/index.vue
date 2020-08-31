@@ -5,13 +5,13 @@
         <v-col class="text-center">
           <ul>
             <li v-for="article in articles" :key="article.id">
-              <NuxtLink
-                :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-              >
-                <h1>
-                  {{ article.title }}
-                </h1>
-              </NuxtLink>
+              <!--              <NuxtLink>-->
+              <!--                :to="{ name: 'blog-slug', params: { slug: article.slug } }"-->
+              <!--              >-->
+              <h1>
+                {{ article.title }}
+              </h1>
+              <!--              </NuxtLink>-->
             </li>
           </ul>
         </v-col>
