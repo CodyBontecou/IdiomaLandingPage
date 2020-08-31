@@ -17,7 +17,7 @@
       <v-list-item
         v-for="item in navigation.nav"
         :key="item.id"
-        :to="item.localePath"
+        :to="localePath(item.localePath)"
         dense
         nuxt
         exact
