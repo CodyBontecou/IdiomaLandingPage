@@ -75,7 +75,6 @@ export default {
   // TODO: Generate proper sitemap for dynamic routes.
   sitemap: {
     hostname: 'https://helloidioma.com',
-    i18n: true,
     routes: [
       '/team/daniela-gonzalez',
       '/equipo/daniela-gonzalez',
