@@ -90,20 +90,22 @@ export default {
   // TODO: Generate proper sitemap for dynamic routes.
   sitemap: {
     hostname: 'https://helloidioma.com',
-    routes: [
-      '/team/daniela-gonzalez',
-      '/team/maribi-garcia',
-      'es/equipo/daniela-gonzalez',
-      'es/equipo/maribi-garcia',
-      '/syllabus/a1',
-      '/syllabus/a2',
-      '/syllabus/b1',
-      '/syllabus/b2',
-      'es/silaba/a1',
-      'es/silaba/a2',
-      'es/silaba/b1',
-      'es/silaba/b2',
-    ],
+    routes: {
+      routes: [
+        '/team/daniela-gonzalez',
+        '/team/maribi-garcia',
+        'es/equipo/daniela-gonzalez',
+        'es/equipo/maribi-garcia',
+        '/syllabus/a1',
+        '/syllabus/a2',
+        '/syllabus/b1',
+        '/syllabus/b2',
+        'es/silaba/a1',
+        'es/silaba/a2',
+        'es/silaba/b1',
+        'es/silaba/b2',
+      ],
+    },
   },
 
   i18n: {
