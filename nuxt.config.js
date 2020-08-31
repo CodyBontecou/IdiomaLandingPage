@@ -32,9 +32,6 @@ export default {
       },
     ],
   },
-  // generate: {
-  //   routes: ['/syllabus/a1', '/syllabus/a2', '/syllabus/b1', '/syllabus/b2'],
-  // },
   /*
    ** Global CSS
    */
@@ -71,8 +68,8 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
-    '@nuxtjs/sitemap',
     'nuxt-i18n',
+    '@nuxtjs/sitemap',
   ],
 
   // TODO: Generate proper sitemap for dynamic routes.
