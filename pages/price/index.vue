@@ -29,11 +29,9 @@
                 :key="highlight.id"
               >
                 <v-list-item-icon>
-                  <v-icon color="primary">{{ highlight.icon }}</v-icon>
+                  <v-icon color="primaryTwo">{{ highlight.icon }}</v-icon>
                 </v-list-item-icon>
-                <span style="font-size: 1.2em; color: rgba(0, 0, 0, 0.6);">
-                  {{ highlight.text }}
-                </span>
+                {{ highlight.text }}
               </v-list-item>
             </v-list>
           </v-card-text>
@@ -42,7 +40,8 @@
             <v-btn
               rounded
               v-bind="size"
-              color="primary"
+              color="primaryTwo"
+              dark
               text
               :to="localePath('signup')"
             >
@@ -59,8 +58,10 @@
     <v-data-table
       :headers="price.headers"
       :items="price.discounts"
+      disable-sort
       disable-filtering
       disable-pagination
+      hide-default-footer
       class="elevation-1 mt-16"
     ></v-data-table>
   </div>
