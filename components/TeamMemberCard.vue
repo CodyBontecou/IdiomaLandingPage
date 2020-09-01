@@ -4,7 +4,7 @@
     max-width="255"
     flat
     color="background"
-    :to="member.localePath"
+    :to="localePath(member.localePath)"
   >
     <v-row align="center" justify="center" class="pa-0 ma-0">
       <v-avatar size="150">
