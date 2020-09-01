@@ -7,10 +7,7 @@
   >
     <v-list dense nav class="pt-10">
       <v-list-item class="pb-5">
-        <nuxt-link
-          :to="localePath(navigation.nav[0].localePath)"
-          class="list-title-link"
-        >
+        <nuxt-link :to="localePath('/')" class="list-title-link">
           <span class="text-h6 font-weight-bold text-capitalize">
             {{ navigation.title }}
           </span>

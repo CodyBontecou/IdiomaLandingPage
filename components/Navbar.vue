@@ -23,7 +23,7 @@
       exact
       class="text-capitalize underlined_button subtitle-1 mr-2"
     >
-      <span class="grey--text">{{ item.text }}</span>
+      <span>{{ item.text }}</span>
     </v-btn>
 
     <v-menu offset-y open-on-hover>
@@ -35,8 +35,8 @@
           v-bind="attrs"
           v-on="on"
         >
-          <span class="grey--text">{{ team.title }}</span>
-          <v-icon class="grey--text">mdi-menu-down</v-icon>
+          <span>{{ team.title }}</span>
+          <v-icon>mdi-menu-down</v-icon>
         </v-btn>
       </template>
       <v-list>
@@ -47,7 +47,7 @@
           exact
         >
           <v-list-item-title>
-            <span class="gray--text">{{ item.name }}</span>
+            <span>{{ item.name }}</span>
           </v-list-item-title>
         </v-list-item>
       </v-list>
@@ -63,8 +63,8 @@
           v-bind="attrs"
           v-on="on"
         >
-          <span class="grey--text">{{ syllabusNav.title }}</span>
-          <v-icon class="grey--text">mdi-menu-down</v-icon>
+          <span>{{ syllabusNav.title }}</span>
+          <v-icon>mdi-menu-down</v-icon>
         </v-btn>
       </template>
       <v-list>

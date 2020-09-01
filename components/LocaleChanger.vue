@@ -1,5 +1,7 @@
 <template>
-  <v-footer absolute class="text-right" color="transparent">
+  <v-footer app absolute color="transparent">
+    <FacebookIcon />
+    <InstagramIcon />
     <v-spacer />
     <v-btn
       v-for="locale in availableLocales"
