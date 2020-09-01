@@ -4,7 +4,7 @@
       v-show="$vuetify.breakpoint.smAndDown"
       @click="drawer = !drawer"
     ></v-app-bar-nav-icon>
-    <nuxt-link class="toolbar-title" to="/">
+    <nuxt-link class="toolbar-title" :to="localePath('/')">
       <v-toolbar-title v-show="$vuetify.breakpoint.mdAndUp">
         <p class="text-uppercase logo">
           <span class="font-weight-black">Hello</span
@@ -23,7 +23,7 @@
       exact
       class="text-capitalize underlined_button subtitle-1 mr-2"
     >
-      <span class="text--black">{{ item.text }}</span>
+      <span class="grey--text">{{ item.text }}</span>
     </v-btn>
 
     <v-menu offset-y open-on-hover>
@@ -35,7 +35,7 @@
           v-bind="attrs"
           v-on="on"
         >
-          <span class="text--black">{{ team.title }}</span>
+          <span class="grey--text">{{ team.title }}</span>
           <v-icon class="grey--text">mdi-menu-down</v-icon>
         </v-btn>
       </template>
@@ -46,7 +46,9 @@
           :to="localePath(item.localePath)"
           exact
         >
-          <v-list-item-title>{{ item.name }}</v-list-item-title>
+          <v-list-item-title>
+            <span class="gray--text">{{ item.name }}</span>
+          </v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -61,7 +63,7 @@
           v-bind="attrs"
           v-on="on"
         >
-          <span class="text--black">{{ syllabusNav.title }}</span>
+          <span class="grey--text">{{ syllabusNav.title }}</span>
           <v-icon class="grey--text">mdi-menu-down</v-icon>
         </v-btn>
       </template>
