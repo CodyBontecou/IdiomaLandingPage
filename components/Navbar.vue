@@ -7,7 +7,7 @@
     <nuxt-link class="toolbar-title" to="/">
       <v-toolbar-title v-show="$vuetify.breakpoint.mdAndUp">
         <p class="text-uppercase logo">
-          <span class="font-weight-black text-primaryTwo">Hello</span
+          <span class="font-weight-black">Hello</span
           ><span class="font-weight-regular font-italic">idioma</span>
         </p>
       </v-toolbar-title>
@@ -21,7 +21,7 @@
       :to="localePath(item.localePath)"
       text
       exact
-      class="text-capitalize underlined_button subtitle-1"
+      class="text-capitalize underlined_button subtitle-1 mr-2"
     >
       <span class="text--black">{{ item.text }}</span>
     </v-btn>
@@ -31,7 +31,7 @@
         <v-btn
           v-show="$vuetify.breakpoint.mdAndUp"
           text
-          class="text-capitalize subtitle-1"
+          class="text-capitalize subtitle-1 mr-2"
           v-bind="attrs"
           v-on="on"
         >
@@ -110,5 +110,6 @@ a {
 }
 .logo {
   font-size: 1.2em;
+  color: #02a6c3;
 }
 </style>
