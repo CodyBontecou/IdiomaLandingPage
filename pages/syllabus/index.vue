@@ -69,10 +69,16 @@ export default {
       },
       meta: [
         {
-          hid: 'description',
+          hid: 'facebook-description',
           property: 'og:description',
           name: 'description',
           content: that.syllabus.meta.description,
+        },
+        {
+          hid: 'facebook-image',
+          property: 'og:image',
+          name: 'image',
+          content: '/logo_no_words.png',
         },
         ...i18nSeo.meta,
       ],
