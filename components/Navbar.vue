@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="transparent" flat absolute clipped-left>
+  <v-app-bar app color="transparent" flat fixed clipped-left>
     <v-app-bar-nav-icon
       v-show="$vuetify.breakpoint.smAndDown"
       @click="drawer = !drawer"

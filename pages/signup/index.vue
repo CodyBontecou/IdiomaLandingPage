@@ -7,7 +7,7 @@
     <p class="subtitle-1">
       {{ signup['subtitle-1'] }}
     </p>
-    <div class="pr-lg-16 mr-lg-16 pt-8">
+    <div class="pr-lg-16 mr-lg-16">
       <client-only>
         <v-form
           ref="form"
