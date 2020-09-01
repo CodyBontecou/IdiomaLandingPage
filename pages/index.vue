@@ -71,7 +71,7 @@
               ></iframe>
               <v-toolbar bottom flat>
                 <v-spacer></v-spacer>
-                <v-btn color="primary" :to="localePath('signup')">
+                <v-btn color="primaryTwo" :to="localePath('signup')">
                   {{ $t('getStarted') }}
                 </v-btn>
               </v-toolbar>
