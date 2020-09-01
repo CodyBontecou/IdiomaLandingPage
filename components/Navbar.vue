@@ -7,7 +7,7 @@
     <nuxt-link class="toolbar-title" to="/">
       <v-toolbar-title v-show="$vuetify.breakpoint.mdAndUp">
         <p class="text-uppercase logo">
-          <span class="font-weight-black text-primary-200">Hello</span
+          <span class="font-weight-black text-primaryTwo">Hello</span
           ><span class="font-weight-regular font-italic">idioma</span>
         </p>
       </v-toolbar-title>

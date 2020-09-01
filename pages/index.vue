@@ -36,7 +36,7 @@
                   dark
                   rounded
                   v-bind="size"
-                  color="primary-200"
+                  color="primaryTwo"
                   class="mr-2"
                   v-on="on"
                 >
@@ -49,7 +49,7 @@
                   rounded
                   v-bind="size"
                   outlined
-                  color="primary-200"
+                  color="primaryTwo"
                   nuxt
                   :to="localePath('signup')"
                 >
