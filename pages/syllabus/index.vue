@@ -17,9 +17,10 @@
 
     <div class="text-left pt-16">
       <v-btn
-        rounded
         v-bind="size"
-        color="primary"
+        rounded
+        dark
+        color="primaryTwo"
         class="mr-2"
         :to="localePath('signup')"
       >

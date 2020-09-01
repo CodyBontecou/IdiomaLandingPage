@@ -21,7 +21,7 @@
         dense
         nuxt
         exact
-        color="primary"
+        color="primaryTwo"
       >
         <v-list-item-content>
           <v-list-item-title class="text-capitalize subtitle-1">
