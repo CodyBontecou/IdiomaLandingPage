@@ -6,7 +6,10 @@
     ></v-app-bar-nav-icon>
     <nuxt-link class="toolbar-title" to="/">
       <v-toolbar-title v-show="$vuetify.breakpoint.mdAndUp">
-        <v-img src="/logo_text.png" max-width="200"></v-img>
+        <p class="text-uppercase logo">
+          <span class="font-weight-black text-primary-200">Hello</span
+          ><span class="font-weight-regular font-italic">idioma</span>
+        </p>
       </v-toolbar-title>
     </nuxt-link>
     <v-spacer></v-spacer>
@@ -104,5 +107,8 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
+}
+.logo {
+  font-size: 1.2em;
 }
 </style>

@@ -27,4 +27,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+body {
+  color: rgba(0, 0, 0, 0.6);
+}
+</style>

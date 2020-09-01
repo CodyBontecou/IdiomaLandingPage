@@ -18,17 +18,17 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Lorem Ipsum Descriptsum',
-      },
     ],
     link: [
       {
         rel: 'icon',
         type: 'image/x-icon',
         href: 'logo_no_words.png',
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
       },
     ],
   },
@@ -40,7 +40,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~plugins/vuetify.js'],
+  plugins: [],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -58,6 +58,7 @@ export default {
         id: 'UA-162353805-1',
       },
     ],
+    '@nuxtjs/vuetify',
   ],
   /*
    ** Nuxt.js modules
@@ -70,6 +71,7 @@ export default {
     '@nuxt/content',
     'nuxt-i18n',
     '@nuxtjs/sitemap',
+    'nuxtjs-mdi-font',
   ],
 
   generate: {
@@ -182,4 +184,24 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
+
+  vuetify: {
+    customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    defaultAssets: false,
+    theme: {
+      themes: {
+        light: {
+          primary: '#03BDF1',
+          'primary-200': '#02A6C3',
+          'secondary-100': '#D5DF20',
+          'secondary-200': '#EBEF90',
+          background: '#f3f3f3',
+        },
+        dark: {
+          background: '#f3f3f3',
+        },
+      },
+    },
+  },
 }

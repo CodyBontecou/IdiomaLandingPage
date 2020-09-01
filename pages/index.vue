@@ -19,10 +19,10 @@
           class="text-center text-md-left pa-md-5 ma-md-5"
         >
           <div class="flex-column mb-6">
-            <h1 class="font-weight-thin title text-md-h3">
+            <h1 class="font-weight-regular title text-md-h3">
               {{ $t('landingPage.title') }}
             </h1>
-            <h1 class="font-weight-thin ml-2 title text-md-h4">
+            <h1 class="font-weight-regular ml-2 title text-md-h4">
               {{ $t('landingPage.subtitle') }}
             </h1>
           </div>
@@ -33,9 +33,10 @@
             <template v-slot:activator="{ on }">
               <div class="flex-row text-center text-md-left">
                 <v-btn
+                  dark
                   rounded
                   v-bind="size"
-                  color="primary"
+                  color="primary-200"
                   class="mr-2"
                   v-on="on"
                 >
@@ -48,7 +49,7 @@
                   rounded
                   v-bind="size"
                   outlined
-                  color="primary"
+                  color="primary-200"
                   nuxt
                   :to="localePath('signup')"
                 >
@@ -92,7 +93,9 @@
               <div class="text-h6 font-weight-medium text-capitalize">
                 {{ highlight.title }}
               </div>
-              <div class="font-weight-thin">{{ highlight.content }}</div>
+              <div class="text--secondary">
+                {{ highlight.content }}
+              </div>
             </v-card-text>
           </v-card>
         </v-col>
