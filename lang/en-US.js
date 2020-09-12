@@ -306,7 +306,7 @@ export default {
     classes: [
       {
         type: 'Private class',
-        price: '10',
+        price: '12',
         highlights: [
           {
             icon: 'mdi-notebook',
@@ -324,7 +324,7 @@ export default {
       },
       {
         type: 'Group classes',
-        price: '6',
+        price: '8',
         highlights: [
           {
             icon: 'mdi-notebook',
