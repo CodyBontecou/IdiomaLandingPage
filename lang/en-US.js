@@ -306,7 +306,7 @@ export default {
     classes: [
       {
         type: 'Private class',
-        price: '12',
+        price: '15',
         highlights: [
           {
             icon: 'mdi-notebook',
@@ -324,7 +324,7 @@ export default {
       },
       {
         type: 'Group classes',
-        price: '8',
+        price: '10',
         highlights: [
           {
             icon: 'mdi-notebook',
@@ -355,21 +355,21 @@ export default {
     discounts: [
       {
         numClasses: '16 classes or more',
-        normalPrice: '$160',
+        normalPrice: '$240',
         discount: '20%',
-        newPrice: '$128',
+        newPrice: '$192',
       },
       {
         numClasses: '8 classes or more',
-        normalPrice: '$80',
+        normalPrice: '$120',
         discount: '15%',
-        newPrice: '$68',
+        newPrice: '$102',
       },
       {
         numClasses: '4 classes or more',
-        normalPrice: '$40',
+        normalPrice: '$60',
         discount: '10%',
-        newPrice: '$36',
+        newPrice: '$54',
       },
     ],
   },
