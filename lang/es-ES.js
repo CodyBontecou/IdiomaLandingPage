@@ -1,72 +1,72 @@
 export default {
   // ****************************** Universal ******************************
-  getStarted: 'get started',
+  getStarted: 'empezar',
   brand: { name: 'Hello Idioma' },
 
   // ****************************** Landing Page ******************************
   landingPage: {
-    title: 'Online Language',
-    subtitle: 'Learning Program',
-    whyUs: 'why us?',
+    title: 'Programa de Aprendizaje',
+    subtitle: 'de Idiomas en línea',
+    whyUs: '¿Por qué nosotros?',
     highlights: [
       {
-        title: 'learn',
+        title: 'aprende',
         content:
-          "With Spanish being the fourth most spoken language on our planet, it's an excellent time to begin your journey in being able to communicate with some of the most beautiful cultures of the world!",
+          'Con el español siendo el cuarto idioma más hablado en nuestro planeta, es un excelente momento para comenzar su aventura para poder comunicarse con algunas de las culturas más hermosas del mundo.!',
       },
       {
-        title: 'speak',
+        title: 'habla',
         content:
-          "We designed our classes to get you speaking. From day one, we'll have you working on pronunciation, conjugations, and more to get you confident in having conversations alongside native speakers.",
+          'Diseñamos nuestras clases para que nuestros alumnos hablen el idioma. Desde el primer día, estaremos trabajando en la pronunciación, las conjugaciones y más, para que se sienta seguro al tener conversaciones con hablantes nativos.',
       },
       {
-        title: 'connect',
+        title: 'conecta',
         content:
-          'Hello Idioma is designed to expose and teach you from our diverse team of professionals. We are flexible in our classroom sizes, adapting to what works best for you.',
+          'Hello Idioma está diseñado para exponer y enseñar por nuestro diverso equipo de profesionales. Somos flexibles en el tamaño de nuestras clases, adaptándonos a lo que mejor funcione para ustedes.',
       },
     ],
     meta: {
-      title: 'Apprender, Speak, and Connect in a new language | Hello Idioma',
+      title: 'Aprende, Habla, y Conecta en un nuevo idioma | Hello Idioma',
       description:
-        'This is the language learning program for you. ' +
-        'Learn how to read, write, and speak in a new language with our quality content that follows alongside the standards ' +
-        'of the Common European Framework of Reference for Languages (CEFR).',
+        'Este es el programa de aprendizaje para ti. ' +
+        'Aprenda a leer, escribir y hablar en un nuevo idioma con nuestro contenido de calidad que sigue los estándares.' +
+        'del Marco Común Europeo de Referencia para las lenguas (MCER).',
     },
   },
 
   // ****************************** Navigation ******************************
   nav: {
     navOptions: [
-      { text: 'home', icon: 'mdi-home', localePath: 'index' },
-      { text: 'sign up', icon: 'mdi-play-circle', localePath: 'signup' },
-      { text: 'price', icon: 'mdi-reminder', localePath: 'price' },
+      { text: 'inicio', icon: 'mdi-home', localePath: 'index' },
+      { text: 'regístrate', icon: 'mdi-play-circle', localePath: 'signup' },
+      { text: 'precio', icon: 'mdi-reminder', localePath: 'price' },
     ],
     syllabus: {
-      title: 'syllabus',
+      title: 'plan de estudios',
       nav: [
-        { name: 'Information', localePath: { name: 'syllabus' } },
+        { name: 'Información', localePath: { name: 'syllabus' } },
         {
-          name: 'Basic - A1',
+          name: 'Básico - A1',
           localePath: { name: 'syllabus-id', params: { id: 'a1' } },
         },
         {
-          name: 'Basic - A2',
+          name: 'Básico - A2',
           localePath: { name: 'syllabus-id', params: { id: 'a2' } },
         },
         {
-          name: 'Independent - B1',
+          name: 'Intermedio - B1',
           localePath: { name: 'syllabus-id', params: { id: 'b1' } },
         },
         {
-          name: 'Independent - B2',
+          name: 'Intermedio - B2',
           localePath: { name: 'syllabus-id', params: { id: 'b2' } },
         },
       ],
     },
     team: {
-      title: 'team',
+      title: 'Equipo',
       nav: [
-        { name: 'Information', localePath: { name: 'team' } },
+        { name: 'Información', localePath: { name: 'team' } },
         {
           name: 'Daniela Gonzalez',
           localePath: {
@@ -87,22 +87,23 @@ export default {
 
   // ****************************** Syllabus Page ******************************
   syllabus: {
-    title: 'Method',
+    title: 'Método',
     subtitle:
-      'We teach various levels, starting from A1 - B2 as defined by the Common European Framework of Reference for Languages (CEFR). Our classes are interactive,\n' +
-      '                we have extensive material consisting of presentations,\n' +
-      '                exercises, videos, and conversations. We adapt to the rhythm of\n' +
-      '                each student and we are attentive to the feedback of the\n' +
-      '                students to improve teaching methods.',
-    secondaryTitle: 'Placement exam',
+      'Enseñamos varios niveles, comenzando desde A1 - B2 según lo definido por el Marco Común Europeo de Referencia para las Lenguas (MCER). Nuestras clases son interactivas,\n' +
+      '                contamos con material extenso compuesto por presentaciones,\n' +
+      '                ejercicios, videos y conversaciones. Nos adaptamos al ritmo de\n' +
+      '                cada alumno y estamos atentos a la retroalimentación de los\n' +
+      '                estudiantes para mejorar los métodos de enseñanza.',
+    secondaryTitle: 'Examen de colocación',
     secondarySubtitle:
-      'Our first class will be free, and purely built in a way that gauges your skill level according to the CEFR. Based off of that, we will specially build a course to achieve your language goals in the most effective way possible.',
+      'Nuestra primera clase será gratuita y puramente construida de una manera que mida su nivel de habilidad de acuerdo con el MCER. Basándonos en eso, crearemos un curso especialmente para lograr sus objetivos lingüísticos de la manera más efectiva posible.',
     meta: {
-      title: 'Syllabus | Learning Learning Program | Hello Idioma',
+      title:
+        'Plan de estudios | Programa de Aprendizaje de Idiomas | Hello Idioma',
       description:
-        'You will receive thoughtful, personalized classes following our structured syllabus from our teachers' +
-        ' all while following the Common European Framework of Reference for Language (CEFR) ' +
-        'with the primary goal of getting you comfortable with your language learning goals.',
+        'Recibirás clases atentas y personalizadas siguiendo nuestro programa estructurado por nuestros profesores.' +
+        ' todo ello siguiendo el Marco Común Europeo de Referencia para las Lenguas (MCER)' +
+        'con el objetivo principal de que se sienta cómodo con sus objetivos de aprendizaje de idiomas.',
     },
   },
 
@@ -112,7 +113,7 @@ export default {
       a1: {
         title: 'A1',
         subtitle:
-          'Can understand and use familiar everyday expressions and very basic phrases aimed at the satisfaction of needs of a concrete type. Can introduce him/herself and others and can ask and answer questions about personal details such as where he/she lives, people he/she knows and things he/she has. Can interact in a simple way provided the other person talks slowly and clearly and is prepared to help.',
+          'Puede comprender y utilizar expresiones cotidianas familiares y frases muy básicas destinadas a la satisfacción de necesidades de tipo concreto. Puede presentarse a sí mismo y a otros y puede responder preguntas sobre detalles personales como dónde vive, las personas que conoce y las cosas que tiene. Puede interactuar de una manera sencilla siempre que la otra persona hable lenta y claramente y esté dispuesta a ayudar..',
         examples: [
           { text: 'No quiero más.', translation: "I don't want any more." },
           {
@@ -128,14 +129,14 @@ export default {
         ],
         meta: {
           title:
-            'A1 | Common European Framework of Reference for Language (CEFR) | Hello Idioma',
+            'A1 | Marco común europeo de referencia para las lenguas (MCER) | Hello Idioma',
           description: '',
         },
       },
       a2: {
         title: 'A2',
         subtitle:
-          'Can understand sentences and frequently used expressions related to areas of most immediate relevance (e.g. very basic personal and family information, shopping, local geography, employment). Can communicate in simple and routine tasks requiring a simple and direct exchange of information on familiar and routine matters.  Can describe in simple terms aspects of his/her background, immediate environment and matters in areas of immediate need.',
+          'Puede comprender oraciones y expresiones de uso frecuente relacionadas con áreas de relevancia más inmediata (por ejemplo, información personal y familiar muy básica, compras, geografía local, empleo). Puede comunicarse en tareas simples y rutinarias que requieren un intercambio simple y directo de información sobre asuntos familiares y rutinarios. Puede describir en términos simples aspectos de su experiencia, entorno inmediato y asuntos en áreas de necesidad inmediata.',
         examples: [
           { text: 'Te amo.', translation: 'I love you.' },
           {
@@ -157,14 +158,14 @@ export default {
         ],
         meta: {
           title:
-            'A2 | Common European Framework of Reference for Language (CEFR) | Hello Idioma',
+            'A2 | Marco común europeo de referencia para las lenguas (MCER) | Hello Idioma',
           description: '',
         },
       },
       b1: {
         title: 'B1',
         subtitle:
-          'Can understand the main points of clear standard input on familiar matters regularly encountered in work, school, leisure, etc. Can deal with most situations likely to arise whilst travelling in an area where the language is spoken.  Can produce simple connected text on topics which are familiar or of personal interest. Can describe experiences and events, dreams, hopes & ambitions and briefly give reasons and explanations for opinions and plans.',
+          'Puede comprender los puntos principales de una entrada clara y estándar sobre asuntos familiares que se encuentran con regularidad en el trabajo, la escuela, el ocio, etc. Puede lidiar con la mayoría de situaciones que pueden surgir mientras viaja en un área donde se habla el idioma. Puede producir texto simple conectado sobre temas que le son familiares o de interés personal. Puede describir experiencias y eventos, sueños, esperanzas y ambiciones y dar brevemente razones y explicaciones de opiniones y planes.',
         examples: [
           { text: 'El tiempo es oro', translation: 'Time is money.' },
           {
@@ -186,14 +187,14 @@ export default {
         ],
         meta: {
           title:
-            'B1 | Common European Framework of Reference for Language (CEFR) | Hello Idioma',
+            'B1 | Marco común europeo de referencia para las lenguas (MCER) | Hello Idioma',
           description: '',
         },
       },
       b2: {
         title: 'B2',
         subtitle:
-          'Can understand the main ideas of complex text on both concrete and abstract topics, including technical discussions in his/her field of specialisation. Can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible without strain for either party. Can produce clear, detailed text on a wide range of subjects and explain a viewpoint on a topical issue giving the advantages and disadvantages of various options.',
+          'Puede comprender las ideas principales de textos complejos sobre temas concretos y abstractos, incluidas las discusiones técnicas en su campo de especialización. Puede interactuar con un grado de fluidez y espontaneidad que hace posible la interacción regular con hablantes nativos sin tensión para ninguna de las partes. Puede producir textos claros y detallados sobre una amplia gama de temas y explicar un punto de vista sobre un tema de actualidad, dando las ventajas y desventajas de varias opciones.',
         examples: [
           { text: 'Un ticket de parking.', translation: 'A parking ticket.' },
           {
@@ -215,14 +216,14 @@ export default {
         ],
         meta: {
           title:
-            'B2 | Common European Framework of Reference for Language (CEFR) | Hello Idioma',
+            'B2 | Marco común europeo de referencia para las lenguas (MCER) | Hello Idioma',
           description: '',
         },
       },
       c1: {
         title: 'C1',
         subtitle:
-          'Can understand a wide range of demanding, longer texts, and recognise implicit meaning. Can express him/herself fluently and spontaneously without much obvious searching for expressions. Can use language flexibly and effectively for social, academic and professional purposes. Can produce clear, well-structured, detailed text on complex subjects, showing controlled use of organisational patterns, connectors and cohesive devices.',
+          'Puede comprender una amplia gama de textos largos y exigentes y reconocer el significado implícito. Puede expresarse de manera fluida y espontánea sin mucha búsqueda obvia de expresiones. Puede utilizar el idioma de forma flexible y eficaz con fines sociales, académicos y profesionales. Puede producir texto claro, bien estructurado y detallado sobre temas complejos, mostrando un uso controlado de patrones organizativos, conectores y dispositivos de cohesión.',
         examples: [
           {
             text: 'Ver las cosas de color de rosa',
@@ -247,14 +248,14 @@ export default {
         ],
         meta: {
           title:
-            'C1 | Common European Framework of Reference for Language (CEFR) | Hello Idioma',
+            'C1 | Marco común europeo de referencia para las lenguas (MCER) | Hello Idioma',
           description: '',
         },
       },
       c2: {
         title: 'C2',
         subtitle:
-          'Can understand with ease virtually everything heard or read. Can summarise information from different spoken and written sources, reconstructing arguments and accounts in a coherent presentation. Can express him/herself spontaneously, very fluently and precisely, differentiating finer shades of meaning even in more complex situations.',
+          'Es capaz de comprender con facilidad prácticamente todo lo que oye o lee. Puede resumir información de diferentes fuentes habladas y escritas, reconstruyendo argumentos y relatos en una presentación coherente. Puede expresarse de forma espontánea, muy fluida y precisa, diferenciando matices más finos de significado incluso en situaciones más complejas.',
         examples: [
           {
             text:
@@ -285,7 +286,7 @@ export default {
         ],
         meta: {
           title:
-            'C2 | Common European Framework of Reference for Language (CEFR) | Hello Idioma',
+            'C2 | Marco común europeo de referencia para las lenguas (MCER)) | Hello Idioma',
           description: '',
         },
       },
@@ -294,107 +295,107 @@ export default {
 
   // ****************************** Price page ******************************
   price: {
-    title: 'Simple, flexible pricing.',
+    title: 'Precios simples y flexibles.',
     subtitle: '',
-    discountsTitle: 'Discounts',
+    discountsTitle: 'Descuentos',
     discountsSubtitle:
-      'A discount will be applied to your total invoice if you pay for at least 4 classes in advanced.',
+      'Se aplicará un descuento a su precio total si paga al menos 4 clases de una hora por adelantado.',
     meta: {
-      title: 'Our Price | Simple, Flexible Pricing | Hello Idioma',
+      title: 'Nuestro precio | Precios simples y flexibles | Hello Idioma',
       description: '',
     },
     classes: [
       {
-        type: 'Private class',
-        price: '12',
+        type: 'Clases Privadas',
+        price: '15',
         highlights: [
           {
             icon: 'mdi-notebook',
-            text: 'One on one classes.',
+            text: 'Clases uno a uno.',
           },
           {
             icon: 'mdi-star-circle',
-            text: 'Specialized for you.',
+            text: 'Especializado para ti.',
           },
           {
             icon: 'mdi-arrow-down-circle',
-            text: 'At your own rhythm.',
+            text: 'A tu propio ritmo.',
           },
         ],
       },
       {
-        type: 'Group classes',
-        price: '8',
+        type: 'Clases grupales',
+        price: '10',
         highlights: [
           {
             icon: 'mdi-notebook',
-            text: '2 - 4 students.',
+            text: '2 - 4 estudiantes.',
           },
           {
             icon: 'mdi-star-circle',
-            text: 'Learn in a group environment.',
+            text: 'Aprende en un ambiente grupal.',
           },
           {
             icon: 'mdi-arrow-down-circle',
-            text: 'Converse and connect with one another.',
+            text: 'Conversar y conectar entre sí.',
           },
         ],
       },
     ],
     headers: [
       {
-        text: '# of classes',
+        text: '# de clases',
         align: 'start',
         sortable: false,
         value: 'numClasses',
       },
-      { text: 'Normal Price', value: 'normalPrice' },
-      { text: 'Discount', value: 'discount' },
-      { text: 'New Price', value: 'newPrice' },
+      { text: 'Precio normal', value: 'normalPrice' },
+      { text: 'Descuento', value: 'discount' },
+      { text: 'Nuevo precio', value: 'newPrice' },
     ],
     discounts: [
       {
-        numClasses: '16 classes or more',
-        normalPrice: '$160',
+        numClasses: '16 clases o más',
+        normalPrice: '$240',
         discount: '20%',
-        newPrice: '$128',
+        newPrice: '$192',
       },
       {
-        numClasses: '8 classes or more',
-        normalPrice: '$80',
+        numClasses: '8 clases o más',
+        normalPrice: '$120',
         discount: '15%',
-        newPrice: '$68',
+        newPrice: '$102',
       },
       {
-        numClasses: '4 classes or more',
-        normalPrice: '$40',
+        numClasses: '4 clases o más',
+        normalPrice: '$60',
         discount: '10%',
-        newPrice: '$36',
+        newPrice: '$54',
       },
     ],
   },
 
   // ****************************** Team + Team/_id Page ******************************
   team: {
-    who: 'Who I am',
-    title: 'Who we are',
-    'title-2': "A language learning team that's different from the rest",
+    who: 'Quién soy',
+    title: 'Quiénes somos',
+    'title-2': 'un equipo que enseñanza idiomas diferente al resto',
     subtitle:
-      'We are a couple of entrepreneurs, intelligent, and studious people,\n' +
-      '              who seek to teach our language in a more colloquial and friendly\n' +
-      '              way, following the correct grammatical structure and providing a\n' +
-      '              broad and vast vocabulary for a full understanding of the\n' +
-      '              language.',
+      '    Somos un grupo de jóvenes emprendedores, inteligentes y estudiosos,\n' +
+      '              que buscamos enseñar nuestro idioma de una forma coloquial y amigable\n' +
+      '              , siguiendo las reglas gramaticales y proporcionando\n' +
+      '              un vocabulario amplio y vasto para un buen entendimiento\n' +
+      '              de la lengua.',
     meta: {
-      title: 'Our Team | Colloquial, Friendly, and Fun | Hello Idioma',
+      title: 'Nuestro equipo | Coloquial, Amigable y Divertido | Hello Idioma',
       description: '',
     },
     teamMembers: [
       {
         title: 'Daniela Gonzalez',
         subtitle:
-          'I’m a Spanish teacher and photographer and I want to share with you a piece of my language and my culture.',
-        role: 'Founder',
+          'Soy maestra de español, estudié fotografía y quiero compartir con ustedes un pedazo de mi cultura a través del lenguaje.',
+        role: 'Fundadora',
         image: '/daniela.jpg',
         slug: 'daniela-gonzalez',
         localePath: {
@@ -402,34 +403,34 @@ export default {
           params: { id: 'daniela-gonzalez' },
         },
         characteristics: {
-          languages: [
-            'Native Mexican Spanish',
-            'English',
-            'French',
-            'Portuguese',
+          idiomas: [
+            'Español Nativo Mexicano',
+            'Inglés',
+            'Francés',
+            'Portugués',
           ],
-          hobbies: [
-            'Travel',
-            'Graphic Design',
-            'Learning new languages',
-            'Meeting new people',
-            'Enjoying new cultures',
+          intereses: [
+            'Viajar',
+            'Diseño Gráfico',
+            'Aprender nuevos idiomas',
+            'Conocer gente nueva',
+            'Disfrutar de la diversidad cultural',
           ],
-          experience: [
-            'Social service with kids.',
-            'Volunteering at CISV, which "aims to educate and inspire action for a more just and peaceful world."',
+          experiencia: [
+            'Servicio Social con niños.',
+            'Voluntariado en CISV, una organización que tiene como objetivo educar e inspirar la acción para un mundo más justo y pacífico."',
           ],
         },
         meta: {
-          title: 'Our Team | Daniela Gonzalez | Hello Idioma',
+          title: 'Nuestro Equipo | Daniela Gonzalez | Hello Idioma',
           description: '',
         },
       },
       {
         title: 'Maribi Garcia',
         subtitle:
-          'I am currently a college student in my 7th semester studying Psychology.',
-        role: 'Founder',
+          'Actualmente soy estudiante universitaria cursando el 7mo semestre de la carrera de Psicología.',
+        role: 'Fundadora',
         image: '/maribi.jpg',
         slug: 'maribi-garcia',
         localePath: {
@@ -437,22 +438,22 @@ export default {
           params: { id: 'maribi-garcia' },
         },
         characteristics: {
-          languages: ['Native Mexican Spanish', 'English'],
-          hobbies: [
-            'Travel',
-            'Meeting new people',
-            'Enjoying new cultures',
-            'Reading',
-            'Learning new ways of thought',
+          idiomas: ['Español Nativo Mexicano', 'Inglés'],
+          intereses: [
+            'Viajar',
+            'Conocer gente nueva',
+            'Disfrutar de la diversidad cultural',
+            'Leer y escribir',
+            'Aprender nuevas formas de pensamiento',
           ],
-          experience: [
-            'Social service with kids and elder people',
-            'Volunteered at an organization called “Techo” which main focus is social development and overcoming poverty',
-            'I have given workshops on non-violence to young students and also provided psychological help',
+          experiencia: [
+            'He realizado servicio social trabajando con niños y adultos mayores',
+            'He sido voluntaria en “Techo”, una organización cuyo enfoque principal es el desarrollo social y que busca superar la situación de pobreza que viven millones de personas. ',
+            'He impartido talleres para la prevención de violencia a jóvenes estudiantes y proporcionado ayuda psicológica. ',
           ],
         },
         meta: {
-          title: 'Our Team | Maribi Garcia | Hello Idioma',
+          title: 'Nuestro Equipo | Maribi Garcia | Hello Idioma',
           description: '',
         },
       },
@@ -461,26 +462,26 @@ export default {
 
   // ****************************** Signup Page ******************************
   signup: {
-    title: 'Sign up',
-    subtitle: 'Want to set up a free demo class?',
+    title: 'Regístrate',
+    subtitle: '¿Te gustaría agendar una clase de prueba gratis?',
     'subtitle-1':
-      "Please fill out the form below and we'll be in contact soon!",
+      '¡Por favor complete el formulario a continuación y nos pondremos en contacto contigo!',
     meta: {
-      title: 'Signup | Schedule a Free Demo Class | Hello Idioma',
+      title: 'Regístrate | Agenda una clase de prueba gratis | Hello Idioma',
       description: '',
     },
     localePath: 'signup/success',
-    nameForm: { label: 'Name', name: 'name' },
+    nameForm: { label: 'Nombre', name: 'name' },
     emailForm: { label: 'E-mail', name: 'email' },
-    messageForm: { label: 'Tell us about yourself', name: 'message' },
-    submitButton: 'Send',
+    messageForm: { label: 'Cuentanos sobre tí', name: 'message' },
+    submitButton: 'Enviar',
   },
 
   // ****************************** Signup/Success Page ******************************
   signupSuccess: {
     title: 'Success',
     subtitle:
-      'Thank you for taking an interest in Hello Idioma! We have successfully received your email, and will get back to you shortly.',
+      '¡Gracias por elegir Hello Idioma! Hemos recibido de manera exitosa su correo electrónico, nos comunicaremos con usted a la brevedad.',
     meta: {
       title: 'Signup Success! | Hello Idioma',
       description: '',
